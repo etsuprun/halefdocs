@@ -15,7 +15,7 @@ Overview
 In this manual, you will learn how to:
 
 - Install Eclipse and the OpenVXML plugin for Eclipse
-- Create a callflow for a "Hello world" voice application
+- Create your OpenVXML first project—a "Hello world" voice application
 - Deploy an application
 - Use halefBot to test out the application
 - Use `autoggs.py` to add logging and semantic categorization capabilities
@@ -33,7 +33,7 @@ Install Java Development Kit 8.
 Install Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download and install Eclipse_. Do not use the latest version--only this one.
+Download and install Eclipse_. Do not use the latest version—only this one.
 
 Install the OpenVXML plug-in for Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -44,7 +44,11 @@ From the menu, select *Help* → *Install New Software...*.
 
 In the Install dialog that appears, in the "Work with:" field at the top, add the VTP's update site: http://build.openmethods.com/downloads/OpenVXML5.0/repository/ and hit Enter.
 
-Check the `OpenVXML 5.0` as well as the `Uncategorized packages` at the top and click Next. Note that this part takes a little while.
+Check the *OpenVXML 5.0* as well as *Uncategorized* packages and click Next. Note that this part takes a little while.
+
+On the *Review Licenses* screen, there aren't actually any licenses to review.  Just click *I accept the terms...* and then *Finish*.
+
+During the installation you'll need to click OK once, to allow unsigned content to be installed.
 
 
 
