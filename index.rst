@@ -25,7 +25,7 @@ Installing Eclipse and OpenVXML
 
 Eclipse is an IDE (interactive development environment) that will allow you, among other things, to design call workflows compatible with Halef.
 
-1. Install `JDK 8`_, a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`.
+1. Install `JDK 8`_, a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`_.
 
 2. Install Eclipse_
 
