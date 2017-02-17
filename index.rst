@@ -20,7 +20,19 @@ In this manual, you will learn how to:
 - Use halefBot to test out the application
 - Use `autoggs.py` to add logging and semantic categorization capabilities
 
+Installing Eclipse and OpenVXML
+--------------------------------
 
+Eclipse is an IDE (interactive development environment) that will allow you, among other things, to design call workflows compatible with Halef.
+
+1. Install Java Development Kit 8
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+JDK 8 is a prerequisite for Eclipse and OpenVXML.
+
+Find the version corresponding to your operating system _here: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+The version for Windows 64-bit is _here: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 
 ..  toctree::
    :maxdepth: 2
