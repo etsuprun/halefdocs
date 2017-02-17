@@ -25,13 +25,22 @@ Installing Eclipse and OpenVXML
 
 Eclipse is an IDE (interactive development environment) that will allow you, among other things, to design call workflows compatible with Halef.
 
-1. Install `JDK 8`_, a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`_.
+Install Java Development Kit 8.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-2. Install Eclipse_. Do not use the latest version--only this one.
+`JDK 8`_ is a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`_.
 
-3. Start Eclipse.
+Install Eclipse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-4. From the menu, select *Help*  *Install New Software...*.
+Download and install Eclipse_. Do not use the latest version--only this one.
+
+Install the OpenVXML plug-in for Eclipse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Start Eclipse.
+
+From the menu, select *Help* → *Install New Software...*.
 
 In the Install dialog that appears, in the "Work with:" field at the top, add the VTP's update site: http://build.openmethods.com/downloads/OpenVXML5.0/repository/ and hit Enter.
 
