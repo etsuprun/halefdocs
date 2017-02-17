@@ -7,8 +7,7 @@
 OpenVXML Without Tears
 ==========================
 
-: Written by Vikram Ramanarayanan
-: Updated by Eugene Tsuprun
+:Authors: Vikram Ramanarayanan and Eugene Tsuprun (with inputs from the OpenVXML Setup and User Guides)
 
 
 Pythia Development Toolkit
