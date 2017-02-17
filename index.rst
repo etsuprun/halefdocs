@@ -3,20 +3,28 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+   
+OpenVXML Without Tears
+==========================
+
+: Written by Vikram Ramanarayanan
+: Updated by Eugene Tsuprun
+
+
 Pythia Development Toolkit
 ==========================
 
-Pythia is a collection of scripts written in Python to facilitate the development of interactive applications in the Halef framework.
+Pythia is a collection of scripts written in Python to automate some aspects of delelopment of Halef applications.
 
-testproject.py: a script to QC an application prior to deployment
+Testing an application prior to deployment
 -----------------------------------------------------------------
 
 
-autoggs.py: a script to add logging and semantic categorization functionality to an application
-------------------------------------------------------------------------------------------------
+Adding logging and semantic categorization functionality to an application
+----------------------------------------------------------------------------
 
 
-text_to_tts.py: a script to convert text prompts into audio prompts
+Converting text prompts into speech
 --------------------------------------------------------------------
 
 ..  toctree::
