@@ -28,7 +28,7 @@ Eclipse is an IDE (interactive development environment) that will allow you, amo
 1. Install Java Development Kit 8
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install_, a prerequisite for Eclipse and OpenVXML. Here is the direct link to the Windows 64-bit version.  
+Install JDK 8_, a prerequisite for Eclipse and OpenVXML. Here is the direct link to the Windows 64-bit version.  
 
-.. _Install: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+.. _Install JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _direct: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
