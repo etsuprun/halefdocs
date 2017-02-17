@@ -42,7 +42,7 @@ Start Eclipse.
 
 From the menu, select *Help* → *Install New Software...*.
 
-In the Install dialog that appears, in the "Work with:" field at the top, add the VTP's update site: http://build.openmethods.com/downloads/OpenVXML5.0/repository/ and hit Enter.
+In the Install dialog that appears, in the "Work with:" field at the top, add the VTP's update site: http://build.openmethods.com/downloads/OpenVXML5.1/repository/ and hit Enter.
 
 Check the *OpenVXML 5.0* as well as *Uncategorized* packages and click Next. Note that this part takes a little while.
 
@@ -50,6 +50,12 @@ On the *Review Licenses* screen, there aren't actually any licenses to review.  
 
 During the installation you'll need to click OK once, to allow unsigned content to be installed.
 
+When the installation is complete, restart Eclipse.
+
+Now that you have installed OpenVXML, change your perspective (the windows and tabs you see in Eclipse). From the menu, select *Window* → *Open Perspective* → *Other...* → *OpenVXML*.
+
+Creating a *Hello World* Project
+--------------------------------
 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
