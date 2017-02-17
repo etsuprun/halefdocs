@@ -27,7 +27,16 @@ Eclipse is an IDE (interactive development environment) that will allow you, amo
 
 1. Install `JDK 8`_, a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`_.
 
-2. Install Eclipse_
+2. Install Eclipse_. Do not use the latest version--only this one.
+
+3. Start Eclipse.
+
+4. From the menu, select *Help*  *Install New Software...*.
+
+In the Install dialog that appears, in the "Work with:" field at the top, add the VTP's update site: http://build.openmethods.com/downloads/OpenVXML5.0/repository/ and hit Enter.
+
+Check the `OpenVXML 5.0` as well as the `Uncategorized packages` at the top and click Next. Note that this part takes a little while.
+
 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
