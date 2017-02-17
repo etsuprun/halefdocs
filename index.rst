@@ -14,11 +14,13 @@ Overview
 
 In this manual, you will learn how to:
 
-- Download and install the OpenVXML plugin for Eclipse
-- Create a "Hello world" voice application
+- Install Eclipse and the OpenVXML plugin for Eclipse
+- Create a callflow for a "Hello world" voice application
 - Deploy an application
 - Use halefBot to test out the application
 - Use `autoggs.py` to add logging and semantic categorization capabilities
+
+
 
 ..  toctree::
    :maxdepth: 2
