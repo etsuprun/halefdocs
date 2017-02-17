@@ -30,13 +30,9 @@ Eclipse is an IDE (interactive development environment) that will allow you, amo
 
 JDK 8 is a prerequisite for Eclipse and OpenVXML.
 
-Find the version corresponding to your operating system _here: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+Find the version corresponding to your operating system .. _here: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 
-The version for Windows 64-bit is _here: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
-
-..  toctree::
-   :maxdepth: 2
-   :caption: Contents:
+The version for Windows 64-bit is .. _here: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 
 
 
