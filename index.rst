@@ -9,22 +9,16 @@ OpenVXML Without Tears
 
 :Authors: Vikram Ramanarayanan and Eugene Tsuprun (with inputs from the OpenVXML Setup and User Guides)
 
+Overview
+-----------
 
-Pythia Development Toolkit
-==========================
+In this manual, you will learn how to:
 
-Pythia is a collection of scripts written in Python to automate some aspects of delelopment of Halef applications.
-
-Testing an application prior to deployment
------------------------------------------------------------------
-
-
-Adding logging and semantic categorization functionality to an application
-----------------------------------------------------------------------------
-
-
-Converting text prompts into speech
---------------------------------------------------------------------
+- Download and install the OpenVXML plugin for Eclipse
+- Create a "Hello world" voice application
+- Deploy an application
+- Use halefBot to test out the application
+- Use `autoggs.py` to add logging and semantic categorization capabilities
 
 ..  toctree::
    :maxdepth: 2
