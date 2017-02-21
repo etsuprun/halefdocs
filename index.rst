@@ -160,8 +160,14 @@ Our callflow will look like this:
 
 .. image:: /images/cheese_callflow.png
 
+Set up your workspace and project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+We find it easiest to keep each OpenVXML project in its own Eclipse workspace. So if you have followed the instructions in `Creating a *Hello World* Project`_, you may want to switch to another Eclipse workspace. Go to *File* → *Switch Workspace* → *Other...* and choose where you'd like your new workspace to be.
 
+To restore your Project Explorer, Design Area, and Voice Pallet, go to *Window* → *Open Perspective* → *Other...*, and choose OpenVXML.
+
+Now, follow the instructions in `Creating a *Hello World* Project`_ to create your voice and workflow: Cheese_Voice and Deploy_Workflow.
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
