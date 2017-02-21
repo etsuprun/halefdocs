@@ -87,7 +87,7 @@ On the *Language Support* dialogue box, associate your workflow with your voice 
 
 You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
 
-Create a Text-Based Hello World Canvas
+Create a text-based Hello World canvas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this part of the tutorial, you will create and deploy a text-based chatbot that says "Hello World".
@@ -123,6 +123,21 @@ Your canvas should now look like this:
 
 Save and Export Your Project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We need to export the newly created project into a Web ARchive (WAR) application that can be served by the web server as VoiceXML and then read by Halef's Voice Browser. A voice browser browses voice/speech web pages (in the VoiceXML format) much like Firefox or Chrome browse HTML pages.
+
+1. Save the project: *File* → *Save All*
+2. Go to *File* → *Export ...*
+3. Under Voice Tools, choose "Web Application"
+4. Select "Archive file".
+5. Choose where you'd like to save the file. We recommend saving it in a git repository for better version control.
+
+Testing Your Application on halefBot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+halefBot is the text-based interface to Halef. 
+
+Open up the halefBot URL (ask your system administrator). The Start URL is [your warfile name without '.war']/Deploy_Workflow/Begin. For instance, if you called your warfile "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
