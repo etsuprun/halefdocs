@@ -57,6 +57,17 @@ Now that you have installed OpenVXML, change your perspective (the windows and t
 Creating a *Hello World* Project
 --------------------------------
 
+Every OpenVXML project consists of two components:
+
+- The *Voice*, which stores all your audio files
+- The *Workflow*, a visual representation of the voice application you want to design. 
+
+First, let's create a new voice project: *File* → *New* → *Project* → *Voice Tool Wizards* → *Voice*
+
+Call the voice project *HelloWorld_Voice*.
+
+You should now see the voice project in your project explorer:
+.. image:: images/create_voice.png
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
