@@ -25,7 +25,7 @@ Installing Eclipse and OpenVXML
 
 Eclipse is an IDE (interactive development environment) that will allow you, among other things, to design call workflows compatible with Halef.
 
-Install Java Development Kit 8.
+Install Java Development Kit 8
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `JDK 8`_ is a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`_.
@@ -67,7 +67,10 @@ First, let's create a new voice project: *File* → *New* → *Project* → *Voi
 Call the voice project *HelloWorld_Voice*.
 
 You should now see the voice project in your project explorer:
-.. image:: images/create_voice.png
+
+.. image:: /images/create_voice.png
+
+Now, create the interactive workflow: *File* → *New* → *Project* → *Voice Tool Wizards* → Interactive Workflow
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
