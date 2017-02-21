@@ -121,7 +121,7 @@ Your canvas should now look like this:
 
 .. image:: /images/hello_world_canvas.png
 
-Save and Export Your Project
+Save and export Your project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We need to export the newly created project into a Web ARchive (WAR) application that can be served by the web server as VoiceXML and then read by Halef's Voice Browser. A voice browser browses voice/speech web pages (in the VoiceXML format) much like Firefox or Chrome browse HTML pages.
@@ -132,12 +132,35 @@ We need to export the newly created project into a Web ARchive (WAR) application
 4. Select "Archive file".
 5. Choose where you'd like to save the file. We recommend saving it in a git repository for better version control.
 
-Testing Your Application on halefBot
+Test your application on halefBot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 halefBot is the text-based interface to Halef. 
 
-Open up the halefBot URL (ask your system administrator). The Start URL is [your warfile name without '.war']/Deploy_Workflow/Begin. For instance, if you called your warfile "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
+Open up halefBot URL (ask your system administrator for the URL).
+
+The Start URL is [your warfile name without '.war']/Deploy_Workflow/Begin.
+
+For instance, if you called your warfile "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
+
+Once you specify the Start URL, halefBot should say: Hello World!
+
+Creating a Branching Voice Application 
+----------------------------------------
+
+Let's now create a more complex callflow. In this section of the tutorial, you will build a text-based chatbot that will:
+
+1. Ask the user if they like cheese
+2. Save the user's response into the database on our server
+3. Categorize the user's response into the semantic categories of "yes" or "no"
+4. Follow up with an appropriate response ("I also like cheese!" or "That's too bad.")
+5. Ask for clarification, if the original response was not understood
+
+Our callflow will look like this:
+
+.. image:: /images/cheese_callflow.png
+
+
 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
