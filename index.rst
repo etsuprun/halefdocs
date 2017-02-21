@@ -94,6 +94,12 @@ In Project Explorer, expand *Deploy_Workflow* and then *Workflow Design*. Open u
 
 .. image:: /images/canvas.png
 
+The *Project Explorer* (on the left) is where you should see the Voice and Workflow projects in your Eclipse workspace.
+
+The *Design Area* (in the middle) shows the call flow of the currently selected canvas.
+
+The *Voice Pallet* (on the right) displays the available building blocks for the application. 
+
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
