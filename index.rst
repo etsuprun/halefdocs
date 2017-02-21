@@ -4,8 +4,8 @@
    contain the root `toctree` directive.
 
    
-OpenVXML Without Tears
-==========================
+OpenVXML Without Tears [1]_
+============================
 
 :Authors: Vikram Ramanarayanan and Eugene Tsuprun (with inputs from the OpenVXML Setup and User Guides)
 
@@ -87,8 +87,8 @@ On the *Language Support* dialogue box, associate your workflow with your voice 
 
 You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
 
-Create a Text-Based Hello World Chatbot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a Text-Based Hello World Canvas
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this part of the tutorial, you will create and deploy a text-based chatbot that says "Hello World".
 
@@ -121,7 +121,12 @@ Your canvas should now look like this:
 
 .. image:: /images/hello_world_canvas.png
 
+Save and Export Your Project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
+
+.. [1] The absence of tears is not guaranteed.
