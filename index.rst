@@ -69,7 +69,7 @@ First, let's create a new voice project: *File* → *New* → *Project* → *Voi
 
 Call the voice project *HelloWorld_Voice*.
 
-You should now see the voice project in your project explorer:
+You should now see the voice project in your Project Explorer pane:
 
 .. image:: /images/create_voice.png
 
@@ -85,6 +85,7 @@ On the *Language Support* dialogue box, associate your workflow with your voice 
 
 .. image:: /images/associate_voice.png
 
+You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
