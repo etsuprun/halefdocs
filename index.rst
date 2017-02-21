@@ -57,6 +57,9 @@ Now that you have installed OpenVXML, change your perspective (the windows and t
 Creating a *Hello World* Project
 --------------------------------
 
+Set up the voice and workflow
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Every OpenVXML project consists of two components:
 
 - The *Voice*, which stores all your audio files
@@ -71,6 +74,17 @@ You should now see the voice project in your project explorer:
 .. image:: /images/create_voice.png
 
 Now, create the interactive workflow: *File* → *New* → *Project* → *Voice Tool Wizards* → Interactive Workflow
+
+The application name for this and all Halef workflows should be *Deploy_Workflow*. Hit *Next*.
+
+In the Branding dialogue box, leave Brands at *Default*. Hit *Next*.
+
+On the *Interaction Type Support* dialogue box, leave *Voice Interaction* checked. Hit *Next*.
+
+On the *Language Support* dialogue box, associate your workflow with your voice by clicking *Not Configured* and choosing *HelloWorld_Voice*:
+
+.. image:: /images/associate_voice.png
+
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
