@@ -87,10 +87,12 @@ On the *Language Support* dialogue box, associate your workflow with your voice 
 
 You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
 
-Create a Hello World canvas
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a Text-Based Hello World Chatbot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In Project Explorer, expand *Deploy_Workflow* and then *Workflow Design*. Open up *Main Canvas.canvas*. As the name suggests, this is the canvas on which you will be drawing a flowchart-like representation of your voice application. You should now see something like this:
+In this part of the tutorial, you will create and deploy a text-based chatbot that says "Hello World".
+
+In Project Explorer, expand *Deploy_Workflow* and then *Workflow Design*. Open up *Main Canvas.canvas*. As the name suggests, this is the canvas on which you will be drawing a flowchart-like representation of your chatbot. You should now see something like this:
 
 .. image:: /images/canvas.png
 
@@ -98,7 +100,26 @@ The *Project Explorer* (on the left) is where you should see the Voice and Workf
 
 The *Design Area* (in the middle) shows the call flow of the currently selected canvas.
 
-The *Voice Pallet* (on the right) displays the available building blocks for the application. 
+The *Voice Pallet* (on the right) displays the available components for the application.
+
+Drag the component called *PlayPrompt* onto the canvas. *PlayPrompt* is a component that outputs something to your user–either a sound file or some text. Let's have it say "Hello world!":
+
+1. Double-click the PlayPrompt on your canvas
+2. Under *Media*, click on *Not Configured*.
+3. Press *Add Entry*.
+4. In Content Type, choose choose Text.
+5. In the text box, type "Hello world!"
+6. Hit OK three times.
+
+.. image:: /images/hello_world.png
+
+Now that you've created the PlayPrompt, let's make sure your application knows to play it when you start interacting with the chatbot. To do this, click on the arrow in the lower right corner of the Begin block and drag and drop it onto the PlayPrompt block. In the ensuing dialog box, select *Continue* and hit OK.
+
+Now, let's create a Return block to mark the end of the application. Drag the *Return* component from the Voice pallet onto your canvas, and connect your PlayPrompt to Return the same way: click the little arrow on the PlayPrompt, drag it to Return, and hit OK.
+
+Your canvas should now look like this:
+
+.. image:: /images/hello_world_canvas.png
 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
