@@ -200,9 +200,8 @@ Fortunately, you don't need to know JavaScript to do these two things. We've cre
 
 Drag a Script block and connect the Question block to it.
 
-Add the following code to the script block:
+Add the following code to the script block::
 
-::
 	/*
 	.*yes.*	yes
 	.*yeah.*
