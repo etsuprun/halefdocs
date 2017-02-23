@@ -202,11 +202,11 @@ Drag a Script block and connect the Question block to it.
 
 Add the following code to the script block:
 
-`/*
-.*yes.*	yes
-.*yeah.*
-.*no.*	no
-*/`
+:: /*
+:: .*yes.*	yes
+:: .*yeah.*
+:: .*no.*	no
+:: */
 
 
 
