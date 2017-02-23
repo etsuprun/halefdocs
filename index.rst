@@ -208,6 +208,8 @@ Add the following code to the script block::
 	.*no.*	no
 	*/
 
+When we run `autoggs.py` on this application, the script will find JavaScript multi-line comment blocks (everything between `/*` and `*/`) and conver them into code. This comment block will be parsed as follows:
+
 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
