@@ -169,8 +169,10 @@ To restore your Project Explorer, Design Area, and Voice Pallet, go to *Window* 
 
 Now, follow the instructions in `Creating a Hello World Project`_ to create your voice and workflow: Cheese_Voice and Deploy_Workflow.
 
-Configure the Question Component
+Configure the Question Block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In contrast to a PlayPrompt, which plays back a message for the user and expects no response, a Question block allows us to prompt the user for a response. In this case, we'll be asking if the user likes pizza.
 
 Drag a *Question* block onto your canvas and connect the Begin block to it. Double click it to edit:
 
@@ -183,6 +185,28 @@ Drag a *Question* block onto your canvas and connect the Begin block to it. Doub
 Your question block should look like this:
 
 .. image:: /images/question_block.png
+
+Configure the Script
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Script blocks allow you to use the JavaScript language to manipulate variables, communicate with external services, and control the flow of the application.
+
+In this application, we will use the script block to:
+
+* Process the user's response to our question (Do you like pizza?) and classify it into one of two categories: yes or no.
+* Send the user's response to a backend service which will store it for subsequent retrieval and analysis
+
+Fortunately, you don't need to know JavaScript to do these two things. We've created a script called `autoggs.py` to help you address the two use cases above.
+
+Drag a Script block and connect the Question block to it.
+
+Add the following code to the script block:
+
+`/*
+.*yes.*	yes
+.*yeah.*
+.*no.*	no
+*/`
 
 
 
