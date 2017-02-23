@@ -77,11 +77,11 @@ Now, create the interactive workflow: *File* → *New* → *Project* → *Voice 
 
 The application name for this and all Halef workflows should be *Deploy_Workflow*. Hit *Next*.
 
-In the Branding dialogue box, leave Brands at *Default*. Hit *Next*.
+In the Branding dialog box, leave Brands at *Default*. Hit *Next*.
 
-On the *Interaction Type Support* dialogue box, leave *Voice Interaction* checked. Hit *Next*.
+On the *Interaction Type Support* dialog box, leave *Voice Interaction* checked. Hit *Next*.
 
-On the *Language Support* dialogue box, associate your workflow with your voice by clicking *Not Configured* and choosing *HelloWorld_Voice*:
+On the *Language Support* dialog box, associate your workflow with your voice by clicking `Not Configured` and choosing *HelloWorld_Voice*:
 
 .. image:: /images/associate_voice.png
 
@@ -105,7 +105,7 @@ The *Voice Pallet* (on the right) displays the available components for the appl
 Drag the component called *PlayPrompt* onto the canvas. *PlayPrompt* is a component that outputs something to your user–either a sound file or some text. Let's have it say "Hello world!":
 
 1. Double-click the PlayPrompt on your canvas
-2. Under *Media*, click on *Not Configured*.
+2. Under *Media*, click on `Not Configured`.
 3. Press *Add Entry*.
 4. In Content Type, choose choose Text.
 5. In the text box, type "Hello world!"
@@ -153,12 +153,12 @@ Let's now create a more complex callflow. In this section of the tutorial, you w
 1. Ask the user if they like cheese
 2. Save the user's response into the database on our server
 3. Categorize the user's response into the semantic categories of "yes" or "no"
-4. Follow up with an appropriate response ("I also like cheese!" or "That's too bad.")
+4. Follow up with an appropriate response ("Me too! I love pizza!" or "I'm sorry to hear you don't like pizza.")
 5. Ask for clarification, if the original response was not understood
 
 Our callflow will look like this:
 
-.. image:: /images/cheese_callflow.png
+.. image:: /images/pizza_callflow.png
 
 Set up your workspace and project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -168,6 +168,21 @@ We find it easiest to keep each OpenVXML project in its own Eclipse workspace. S
 To restore your Project Explorer, Design Area, and Voice Pallet, go to *Window* → *Open Perspective* → *Other...*, and choose OpenVXML.
 
 Now, follow the instructions in `Creating a Hello World Project`_ to create your voice and workflow: Cheese_Voice and Deploy_Workflow.
+
+Configure the Question Component
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Drag a *Question* block onto your canvas and connect the Begin block to it. Double click it to edit:
+
+1. Set *User Input Style* to "S" and leave the dropdown at "Voice Only". (Do this first.)
+2. Set the *Name* for the question block. This name is arbitrary and will just help you identify the block on your canvas.
+3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, `A_do_you_like_pizza`.
+4. Click on `Not Configured` next to *Voice Grammar. Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
+5. Click on `Not Configured` next to Voice Grammar. Choose "Grammar File" and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
+
+Your question block should look like this:
+
+.. image:: /images/question_block.png
 
 
 
