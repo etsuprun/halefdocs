@@ -301,9 +301,80 @@ Here is what the output should look like::
 	Operating in REGEX mode...
 	Saving C:/openvxml/pizza\Deploy_Workflow\Workflow Design\Main Canvas.canvas
 
-
 Save and deploy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. highlight:: javascript
+
+Let's open our project in Eclipse again and have a look. Pull up the script block, and you should see this JavaScript code::
+
+	/*.*yes.*	yes
+
+	.*yeah.*	yes
+
+	.*no.*	no*/
+	Log.info("DEVELOPER LOG: Entering parsing script");
+	// If JVXML session ID exists, use that. Otherwise, we're probably in halefBot, so let's generate one.
+	if (typeof Variables.sessionId =='undefined') {
+		// if session ID is undefined (because we're accessing via HalefBot), let's make one.
+		if (typeof Variables.InitialParameters['sessionId'] == 'undefined') {
+			Variables.sessionId = 'halefbot_' + Variables.dataCollectionGroup + '_' + Variables.extension + '_' + Date.now().toString() + '_' + Math.round(Math.random() * 10000000).toString();
+			} else {
+		Variables.sessionId = Variables.InitialParameters['sessionId'];
+		}
+	}
+	Variables.SC_do_you_like_pizza = "";
+
+	//Please fill in the appropriate variable name below
+
+	var myJsStr = '' + Variables.A_do_you_like_pizza;
+
+
+	//Convert input variable to lower case
+	var myJsStr_LC = myJsStr.toLowerCase();
+
+	//Check for the presence of the "yes" semantic category
+	if(myJsStr_LC.match(/.*yeah.*/gi) || myJsStr_LC.match(/.*yes.*/gi))
+	{
+		Variables.SC_do_you_like_pizza = "yes";
+		Log.info("DEVELOPER LOG: Set flag variable SC_do_you_like_pizza to yes");
+	}
+
+	//Check for the presence of the "no" semantic category
+	if(myJsStr_LC.match(/.*no.*/gi))
+	{
+		Variables.SC_do_you_like_pizza = "no";
+		Log.info("DEVELOPER LOG: Set flag variable SC_do_you_like_pizza to no");
+	}
+
+	//Condition to check if the ASR returned an empty string (corresponding to a NULL recognition or no-match hypothesis)
+
+		if(myJsStr_LC == "")
+	{
+
+			Variables.SC_do_you_like_pizza = "";
+
+			Log.info("DEVELOPER LOG: Set flag to empty string");
+	}
+
+	Log.info("DEVELOPER LOG: Starting web service script");
+
+	var connection = java.net.URL("http://"+java.net.InetAddress.getLocalHost().getHostAddress()+"/PHP-Loggers/openvxml_logger.php").openConnection();
+	Log.info("starting key.toString()");
+	Log.info("sessionId="+Variables.sessionId);
+	Log.info("InitialParameters="+Variables.InitialParameters);
+	Log.info("completing key.toString()");
+	var query = new java.lang.String("sessionId="+Variables.sessionId+"&A_do_you_like_pizza="+Variables.A_do_you_like_pizza+"&SC_do_you_like_pizza'="+Variables.SC_do_you_like_pizza);
+
+			
+	connection.setDoOutput(true);
+	connection.setRequestProperty("Accept-Charset", "UTF-8");
+	connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+	connection.getOutputStream().write(query.getBytes("UTF-8"));
+	var response = connection.getInputStream();
+	Log.info("DEVELOPER LOG: Completing web service script");
+
+Great.
 
 Follow the instructions under `Save and export your project`_ to save, export, deploy, and test your application.
 
