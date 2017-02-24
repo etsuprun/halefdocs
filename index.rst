@@ -159,7 +159,7 @@ Creating a Branching Application
 
 Let's now create a more complex callflow. In this section of the tutorial, you will build a text-based chatbot that will:
 
-1. Ask the user if they like cheese
+1. Ask the user if they like pizza
 2. Save the user's response into the database on our server
 3. Categorize the user's response into the semantic categories of "yes" or "no"
 4. Follow up with an appropriate response ("Me too! I love pizza!" or "I'm sorry to hear you don't like pizza.")
@@ -176,7 +176,7 @@ We find it easiest to keep each OpenVXML project in its own Eclipse workspace. S
 
 To restore your Project Explorer, Design Area, and Voice Pallet, go to *Window* → *Open Perspective* → *Other...*, and choose OpenVXML.
 
-Now, follow the instructions in `Creating a Hello World Project`_ to create your voice and workflow: Cheese_Voice and Deploy_Workflow.
+Now, follow the instructions in `Creating a Hello World Project`_ to create your voice and workflow: Pizza_Voice and Deploy_Workflow.
 
 Configure the question block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -249,7 +249,23 @@ Your Branch properties should now look like this:
 
 .. image:: /images/branch_block.png
 
+We do not need to define an Expression for the third exit path (neither "yes" nor "no"). This so-called Default path will be triggered if the JavaScript expressions for all the other semantic categories were computed to ``false``.
 
+Add the PlayPrompts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Depending on the category of the response, we will respond with a relevant PlayPrompt—"Me too! I love pizza!", "I'm sorry to hear you don't like pizza.", or "Sorry, I don't understand.". Create three new PlayPrompts that say this.
+
+Add the connectors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Draw an arrow from your Branch to "Me too! I love pizza!" In the ensuing dialog box, choose the "yes" exit path.
+
+Now, draw an arrow from the Branch to "I'm sorry to hear you don't like pizza." Choose the "no" exit path.
+
+Draw an arrow from the Branch to "I don't understand" and choose the Default exit path. If the system doesn't understand the response, let's ask the user to repeat it. To do so, connect the "I don't understand" PlayPrompt back to the "Do you like pizza?" question to create a loop.
+
+Finally, connect the remaining two play prompts to a Return block to indicate the end of the application.
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
