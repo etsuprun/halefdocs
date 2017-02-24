@@ -169,7 +169,7 @@ To restore your Project Explorer, Design Area, and Voice Pallet, go to *Window* 
 
 Now, follow the instructions in `Creating a Hello World Project`_ to create your voice and workflow: Cheese_Voice and Deploy_Workflow.
 
-Configure the Question Block
+Configure the question block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In contrast to a PlayPrompt, which plays back a message for the user and expects no response, a Question block allows us to prompt the user for a response. In this case, we'll be asking if the user likes pizza.
@@ -186,31 +186,34 @@ Your question block should look like this:
 
 .. image:: /images/question_block.png
 
-Configure the Script
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a script block
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Script blocks allow you to use the JavaScript language to manipulate variables, communicate with external services, and control the flow of the application.
 
-In this application, we will use the script block to:
+In this application, we will use the script block to classify the response into one of two categories: yes or no. We will also send the user's response to a backend service, which will then store it into a database.
 
-* Process the user's response to our question (Do you like pizza?) and classify it into one of two categories: yes or no.
-* Send the user's response to a backend service which will store it for subsequent retrieval and analysis
-
-Fortunately, you don't need to know JavaScript to do these two things. We've created a script called `autoggs.py` to help you address the two use cases above.
+Fortunately, you don't need to know JavaScript to achieve the above goals. We've created a Python script called `autoggs.py` to help you.
 
 Drag a Script block and connect the Question block to it.
 
-Add the following code to the script block::
+Copy the following into the script block::
 
 	/*
 	.*yes.*	yes
-	.*yeah.*
+	.*yeah.*	yes
 	.*no.*	no
 	*/
 
-When we run `autoggs.py` on this application, the script will find JavaScript multi-line comment blocks (everything between `/*` and `*/`) and conver them into code. This comment block will be parsed as follows:
+When we run `autoggs.py` on this application, the script will find the macros (everything between `/*` and `*/`) and convert them into code that will:
 
+* Log `A_do_you_like_pizza` (the variable containing the response to the question block) to the server
+* If the response contains the strings "yes" or "yeah", set the variable `SC_do_you_like_pizza` to equal to "yes". 
+* If the response contains the string "no", set the variable `SC_do_you_like_pizza` to equal to "no".
 
+The syntax of each line of the macro is as follows::
+	
+	[regular expression matching the response] [tab character] [name of semantic category]
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
