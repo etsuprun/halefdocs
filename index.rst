@@ -130,7 +130,7 @@ Your canvas should now look like this:
 
 .. image:: /images/hello_world_canvas.png
 
-Save and export Your project
+Save and export your project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We need to export the newly created project into a Web ARchive (WAR) application that can be served by the web server as VoiceXML and then read by Halef's Voice Browser. A voice browser browses voice/speech web pages (in the VoiceXML format) much like Firefox or Chrome browse HTML pages.
@@ -256,8 +256,8 @@ Add the PlayPrompts
 
 Depending on the category of the response, we will respond with a relevant PlayPrompt—"Me too! I love pizza!", "I'm sorry to hear you don't like pizza.", or "Sorry, I don't understand.". Create three new PlayPrompts that say this.
 
-Add the connectors
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add the connectors and Return block
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Draw an arrow from your Branch to "Me too! I love pizza!" In the ensuing dialog box, choose the "yes" exit path.
 
@@ -265,13 +265,53 @@ Now, draw an arrow from the Branch to "I'm sorry to hear you don't like pizza." 
 
 Draw an arrow from the Branch to "I don't understand" and choose the Default exit path. If the system doesn't understand the response, let's ask the user to repeat it. To do so, connect the "I don't understand" PlayPrompt back to the "Do you like pizza?" question to create a loop.
 
-Finally, connect the remaining two play prompts to a Return block to indicate the end of the application.
+Finally, drag a Return block from the Voice Pallet. Connect the remaining two play prompts to a Return block to indicate the end of the application.
+
+Run autoggs.py
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now that your callflow is complete, we're ready to run `autoggs.py` to convert our macro into JavaScript code.
+
+If you don't have it yet, download `Python 3`_.
+
+Open the terminal (Git Bash in Windows or a Mac/Linux terminal).
+
+Install the `pandas` package for Python::
+
+	pip install pandas
+
+Clone the `pythia` repository::
+	
+	git clone [repository location goes here]
+
+Go into the `pythia` directory and run `autoggs.py`::
+	
+	python autoggs.py [the location of your Eclipse workspace directory]
+
+Here is what the output should look like::
+	
+	MINGW64 /c/tasks/pythia (master)
+	$ python autoggs.py /c/openvxml/pizza
+	Reading in the workspace...
+	Parsing script for the do_you_like_pizza question block ...
+	Variable name: do_you_like_pizza
+	['.*yes.*', 'yes']
+	['.*yeah.*', 'yes']
+	['.*no.*', 'no']
+	Operating in REGEX mode...
+	Saving C:/openvxml/pizza\Deploy_Workflow\Workflow Design\Main Canvas.canvas
+
+
+Save and deploy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the instructions under `Save and export your project`_ to save, export, deploy, and test your application.
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
 .. _git tutorial: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
 .. _RegexOne tutorial: https://www.regexone.com
-
+.. _Python 3: https://www.python.org/downloads/
 
 .. [1] The absence of tears is not guaranteed.
