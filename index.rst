@@ -25,8 +25,7 @@ Prerequisites
 
 We assume that you are familiar with:
 
-- Using git and through directories on your computer using the command line—either through git bash on Windows or a terminal window on Mac/Linux. 
-To learn about git and command line basics, check out the `git tutorial`_.
+- Using git and through directories on your computer using the command line—either through git bash on Windows or a terminal window on Mac/Linux. To learn about git and command line basics, check out the `git tutorial`_.
 
 - Using regular expressions, which we use to search for patterns in the users' responses. For an introduction to regular expressions, we recommend the `RegexOne tutorial`_.
 
@@ -256,7 +255,7 @@ Your Branch properties should now look like this:
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
 .. _git tutorial: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
-.. _RegexOne tutorial: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
+.. _RegexOne tutorial: https://www.regexone.com
 
 
 .. [1] The absence of tears is not guaranteed.
