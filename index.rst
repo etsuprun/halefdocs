@@ -57,13 +57,13 @@ Now that you have installed OpenVXML, change your perspective (the windows and t
 Creating a Hello World Project
 --------------------------------
 
-Set up the voice and workflow
+Set up the voice and workflows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every OpenVXML project consists of two components:
 
 - The *Voice*, which stores all your audio files
-- The *Workflow*, a visual representation of the voice application you want to design. 
+- The *Workflows*, a visual representation of the voice application you want to design. 
 
 First, let's create a new voice project: *File* → *New* → *Project* → *Voice Tool Wizards* → *Voice*
 
@@ -100,9 +100,9 @@ The *Project Explorer* (on the left) is where you should see the Voice and Workf
 
 The *Design Area* (in the middle) shows the call flow of the currently selected canvas.
 
-The *Voice Pallet* (on the right) displays the available components for the application.
+The *Voice Pallet* (on the right) displays the available blocks for the application.
 
-Drag the component called *PlayPrompt* onto the canvas. *PlayPrompt* is a component that outputs something to your user–either a sound file or some text. Let's have it say "Hello world!":
+Drag the block called *PlayPrompt* onto the canvas. *PlayPrompt* outputs something to your user–either a sound file or some text. Let's have it say "Hello world!":
 
 1. Double-click the PlayPrompt on your canvas
 2. Under *Media*, click on `Not Configured`.
@@ -115,7 +115,7 @@ Drag the component called *PlayPrompt* onto the canvas. *PlayPrompt* is a compon
 
 Now that you've created the PlayPrompt, let's make sure your application knows to play it when you start interacting with the chatbot. To do this, click on the arrow in the lower right corner of the Begin block and drag and drop it onto the PlayPrompt block. In the ensuing dialog box, select *Continue* and hit OK.
 
-Now, let's create a Return block to mark the end of the application. Drag the *Return* component from the Voice pallet onto your canvas, and connect your PlayPrompt to Return the same way: click the little arrow on the PlayPrompt, drag it to Return, and hit OK.
+Now, let's create a Return block to mark the end of the application. Drag the *Return* block from the Voice pallet onto your canvas, and connect your PlayPrompt to Return the same way: click the little arrow on the PlayPrompt, drag it to Return, and hit OK.
 
 Your canvas should now look like this:
 
@@ -139,9 +139,9 @@ halefBot is the text-based interface to Halef.
 
 Open up halefBot URL (ask your system administrator for the URL).
 
-The Start URL is [your warfile name without '.war']/Deploy_Workflow/Begin.
+The Start URL is [your war file name without '.war']/Deploy_Workflow/Begin.
 
-For instance, if you called your warfile "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
+For instance, if you called your war file "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
 
 Once you specify the Start URL, halefBot should say: Hello World!
 
@@ -176,7 +176,7 @@ In contrast to a PlayPrompt, which plays back a message for the user and expects
 
 Drag a *Question* block onto your canvas and connect the Begin block to it. Double click it to edit:
 
-1. Set *User Input Style* to "S" and leave the dropdown at "Voice Only". (Do this first.)
+1. Set *User Input Style* to "S" and leave the drop-down at "Voice Only". (Do this first.)
 2. Set the *Name* for the question block. This name is arbitrary and will just help you identify the block on your canvas.
 3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, `A_do_you_like_pizza`.
 4. Click on `Not Configured` next to *Voice Grammar. Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
@@ -186,12 +186,12 @@ Your question block should look like this:
 
 .. image:: /images/question_block.png
 
-Create a script block
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Create a Script block
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Script blocks allow you to use the JavaScript language to manipulate variables, communicate with external services, and control the flow of the application.
 
-In this application, we will use the script block to classify the response into one of two categories: yes or no. We will also send the user's response to a backend service, which will then store it into a database.
+In this application, we will use the script block to classify the response into one of two categories: yes or no. We will also send the user's response to a back-end service, which will then store it into a database.
 
 Fortunately, you don't need to know JavaScript to achieve the above goals. We've created a Python script called `autoggs.py` to help you.
 
@@ -214,6 +214,29 @@ When we run `autoggs.py` on this application, the script will find the macros (e
 The syntax of each line of the macro is as follows::
 	
 	[regular expression matching the response] [tab character] [name of semantic category]
+
+Create a Branch block
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Drag a Branch block from the Voice pallet and connect the Script block to it. The Branch block is what allows to route the application in accordance with the semantic category of the response to "Do you like pizza?"
+
+We will build exit paths to deal with three types of responses:
+
+* responses that fall into the category of "yes" (users who like pizza)
+* responses that fall into the category of "no" (users who don't like pizza)
+* responses which did not fall into either category (i.e., what our script failed to categorize)
+
+Open the Branch block and hit "Add Branch".
+
+`Exit Path Name` is an arbitrary name, but we recommend keeping it consistent with the name of the semantic category. Let's first make a branch for the "yes" category. Set Exit Path Name to `yes`.
+
+The `Expression` is a JavaScript statement that should return ``true`` or ``false``. If the statement is ``true``, the call will be routed through this exit path. In this case, we will want to enter: ``Variables.SC_do_you_like_pizza == "yes"``
+
+.. image:: /images/branch.png
+
+Now, make another exit path for the "no" category. The Exit Path Name should say `no`, and the Expression should read: ``Variables.SC_do_you_like_pizza == "no"``
+
+.. image:: /images/branch_block.png
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
