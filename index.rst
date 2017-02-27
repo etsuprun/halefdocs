@@ -378,6 +378,25 @@ Great.
 
 Follow the instructions under `Save and export your project`_ to save, export, deploy, and test your application.
 
+Portals: Extending Workflows to Span Multiple Canvases
+--------------------------------------------------------
+Using multiple canvases is a great way to separate an application into more manageable pieces. 
+
+To add a new design canvas to a Workflow (and configure a portal between the new and existing canvas):
+
+1. Right-click on the `Workflow Design` folder for ``Deploy_Workflow`` in the Project Explorer and select: 
+ `New` → `Other` → `Voice Tools Wizard` -> `Design Document` and click "Next". This will open the new design document wizard. Give the new canvas a name and hit "Finish".
+
+2. Enter a name for the new design canvas in the input box (for example, “SecondCanvas”. Note: This name must be unique amongst the existing design canvases in the application. 
+
+3. When you open up the new canvas, you'll see a `Portal Exit` block on the new canvas.
+
+.. image:: /images/secondcanvas.png
+
+4. Now, let's set up a Portal Entry and connect it to the second canvas. Drag and drop `Portal Entry` from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to. 
+
+
+
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
