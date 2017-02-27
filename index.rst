@@ -430,7 +430,7 @@ Just like a Branch block, a Decision block supports multiple exit paths. Connect
 
 Let's save, deploy, and try this in halefBot:
 
-.. image:: /images/counter_decision.png
+.. image:: /images/halefbot_counter.png
 
 After the third time we hit the Default exit path, the counter was greater than 2, and so we got kicked out from the application.
 
