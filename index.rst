@@ -390,7 +390,7 @@ Follow the instructions under `Save and export your project`_ to save, export, d
 
 Open your project in halefBot and try a few different responses:
 
-.. image:: /images/branch_block.png
+.. image:: /images/pizza_chat.png
 
 You'll note that the response in Russian ("я предпочитаю гамбургеры") was not in our grammar, and so it correctly went to the Default exit path. The other two responses ("yeah of course I love pizza!" and "not so much") were successfully captured by our regular expressions.
 
