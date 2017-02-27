@@ -164,6 +164,19 @@ For instance, if you called your war file "helloworld.war", the Start URL is ``h
 
 Once you specify the Start URL, halefBot should say: Hello World!
 
+Importing an Application from a .war File
+----------------------------------------
+
+Let's say you want to import an application someone else has already worked on and saved to a .war file. Here is what you'll need to do:
+
+1. If you're using git, do a ``git pull`` and get the latest copy of the .war file.
+2. Switch workspaces in OpenVXML. (We recommend one Halef application per workspace.) Go to File → Switch Workspace → Other ... and give a path where the new workspace should be created, for example: ``c:\openvxml\pizza2``
+3. Open the OpenVXML perspective: `Window` → `Open Perspective` → `Other...` and choose "OpenVXML".
+4. `File` → `Import...` Choose "Existing Projects into Workspace". Select archive file, hit `Browse...` In the lower right corner, choose `*.*` and then choose your .war file.
+5. Hit "Finish" in the window that appears.
+6. You may or may not get an error message. If you do, and you can't access Main canvas, restart Eclipse.
+
+
 Creating a Branching Application 
 ----------------------------------------
 
