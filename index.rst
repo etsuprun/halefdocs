@@ -37,7 +37,7 @@ Eclipse is an IDE (interactive development environment) that will allow you, amo
 Install Java Development Kit 8
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`JDK 8`_ is a prerequisite for Eclipse and OpenVXML. Here is the direct link to the `Windows 64-bit version`_.
+`JDK 8`_ is a prerequisite for Eclipse and OpenVXML. Download and install it.
 
 Install Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -197,7 +197,7 @@ Drag a *Question* block onto your canvas and connect the Begin block to it. Doub
 
 1. Set *User Input Style* to "S" and leave the drop-down at "Voice Only". (Do this first.)
 2. Set the *Name* for the question block. This name is arbitrary and will just help you identify the block on your canvas.
-3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, `A_do_you_like_pizza`.
+3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, ``A_do_you_like_pizza``.
 4. Click on `Not Configured` next to *Voice Grammar. Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
 5. Click on `Not Configured` next to Voice Grammar. Choose "Grammar File" and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
 
@@ -226,9 +226,9 @@ Copy the following into the script block::
 
 When we run `autoggs.py` on this application, the script will find the macros (everything between `/*` and `*/`) and convert them into code that will:
 
-* Log `A_do_you_like_pizza` (the variable containing the response to the question block) to the server
-* If the response contains the strings "yes" or "yeah", set the variable `SC_do_you_like_pizza` to equal to "yes". 
-* If the response contains the string "no", set the variable `SC_do_you_like_pizza` to equal to "no".
+* Log ``A_do_you_like_pizza`` (the variable containing the response to the question block) to the server
+* If the response contains the strings "yes" or "yeah", set the variable ``SC_do_you_like_pizza`` to equal to "yes". 
+* If the response contains the string "no", set the variable ``SC_do_you_like_pizza`` to equal to "no".
 
 The syntax of each line of the macro is as follows::
 	
@@ -300,7 +300,6 @@ Go into the `pythia` directory and run `autoggs.py`::
 
 Here is what the output should look like::
 	
-	MINGW64 /c/tasks/pythia (master)
 	$ python autoggs.py /c/openvxml/pizza
 	Reading in the workspace...
 	Parsing script for the do_you_like_pizza question block ...
@@ -392,11 +391,48 @@ Open your project in halefBot and try a few different responses:
 
 .. image:: /images/pizza_chat.png
 
-You'll note that the response in Russian ("я предпочитаю гамбургеры") was not in our grammar, and so it correctly went to the Default exit path. The other two responses ("yeah of course I love pizza!" and "not so much") were successfully captured by our regular expressions.
+You'll note that the response in Russian ("я предпочитаю блины") was not in our grammar, and so it correctly went to the Default exit path. The other two responses ("yeah of course I love pizza!" and "not so much") were successfully captured by our regular expressions.
 
 Adding Counters
 --------------------------------------------------------
 
+In our pizza callflow, there is no set limit as to how many times the user will get to the "I don't understand" dialog state. As long as they keep saying something we don't have in our semantic categories, the conversation can go on indefinitely.
+
+We can use simple counter logic to set a limit. Let's do this:
+
+1. Initialize a counter and set it to 0.
+2. Each time we hit the Default exit path (the response does not fit into the "yes" or "no" semantic categories), increment the counter by 1.
+3. If the counter is greater than 2, exit the application. Else, keep asking the user if they like pizza.
+
+We'll revise our callflow to look like this:
+
+.. image:: /images/pizza_counter.png
+
+First, let's initialize the counter. Open the Begin block and add a new variable called ``counter_do_you_like_pizza``. Set Type to Decimal, and Value to 0.
+
+.. image:: /images/begin_counter.png
+
+Note: we strongly recommend keeping your counter variable names exactly consistent with the prompt variable names (``A_do_you_like_pizza`` in this case).
+
+In the first version of this callflow, our Default exit path was connected directly to the "I don't understand" PlayPrompt. Now, we'll want to change this logic so that before we end up at "I don't understand", we'll first make sure that the user hasn't already been there twice.
+
+Add another Script block to your canvas. If you'd like, give it a name like "increment counter". Set the Default exit path of the branch to go to this new script block. In your script block, add this JavaScript to increment the counter::
+
+	Variables.counter_do_you_like_pizza = Variables.counter_do_you_like_pizza + 1;
+
+Now, after we run this code, we'll want to decide whether the counter is greater than 2. To help with this, let's use the `Decision` block from the Voice Pallet.
+
+The Decision block helps us formulate a single JavaScript expression that evaluates to ``true`` or ``false``. Select ``counter_do_you_like_pizza`` on the left, `Greater Than (>)` as the comparison operator, then Expression of ``2`` on the right. 
+
+.. image:: /images/counter_decision.png
+
+Just like a Branch block, a Decision block supports multiple exit paths. Connect the ``true`` exit path to another PlayPrompt that says something like: "Sorry you're having trouble. Please try again later." Connect the ``false`` exit path to our "I don't understand" PlayPrompt, which then is connected back to the original prompt.
+
+Let's save, deploy, and try this in halefBot:
+
+.. image:: /images/counter_decision.png
+
+After the third time we hit the Default exit path, the counter was greater than 2, and so we got kicked out from the application.
 
 Portals: Extending Workflows to Span Multiple Canvases
 --------------------------------------------------------
@@ -416,7 +452,6 @@ To add a new design canvas to a Workflow (and configure a portal between the new
 4. Now, let's set up a Portal Entry and connect it to the second canvas. Drag and drop `Portal Entry` from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to. 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-.. _`Windows 64-bit version`: http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-windows-x64.exe
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
 .. _git tutorial: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
 .. _RegexOne tutorial: https://www.regexone.com
