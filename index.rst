@@ -47,13 +47,23 @@ Download and install Eclipse_. Do not use the latest version—only this one.
 Install the OpenVXML plug-in for Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Download OpenVXML 5.1. Here is the compiled `OpenVXML for Windows`_. 
+
+Unzip the file.
+
 Start Eclipse.
 
 From the menu, select *Help* → *Install New Software...*.
 
-In the Install dialog that appears, in the "Work with:" field at the top, add the VTP's update site: http://build.openmethods.com/downloads/OpenVXML5.1/repository/ and hit Enter.
+In the Install dialog that appears, in the "Work with:" field at the top, hit `Add...`.
 
-Check the *OpenVXML 5.0* as well as *Uncategorized* packages and click Next. Note that this part takes a little while.
+Hit `Local...` and select the unzipped directory: ``OpenVXML_5.1.0201506111143``.
+
+Make sure all the check boxes in the bottom part of the screen are unchecked (`Show only the latest versions of available software`, `Group items by category`, etc.)
+
+Select All packages.
+
+.. image:: /images/install_openvxml.png
 
 On the *Review Licenses* screen, there aren't actually any licenses to review.  Just click *I accept the terms...* and then *Finish*.
 
@@ -401,5 +411,6 @@ To add a new design canvas to a Workflow (and configure a portal between the new
 .. _git tutorial: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
 .. _RegexOne tutorial: https://www.regexone.com
 .. _Python 3: https://www.python.org/downloads/
+.. _OpenVXML for Windows: https://sourceforge.net/p/halef/openvxml/ci/master/tree/OpenVXML-5.1.0/binary/OpenVXML_5.1.0.201506111143.zip
 
 .. [1] The absence of tears is not guaranteed.
