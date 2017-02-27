@@ -388,6 +388,16 @@ Great.
 
 Follow the instructions under `Save and export your project`_ to save, export, deploy, and test your application.
 
+Open your project in halefBot and try a few different responses:
+
+.. image:: /images/branch_block.png
+
+You'll note that the response in Russian ("я предпочитаю гамбургеры") was not in our grammar, and so it correctly went to the Default exit path. The other two responses ("yeah of course I love pizza!" and "not so much") were successfully captured by our regular expressions.
+
+Adding Counters
+--------------------------------------------------------
+
+
 Portals: Extending Workflows to Span Multiple Canvases
 --------------------------------------------------------
 Using multiple canvases is a great way to separate an application into more manageable pieces. 
