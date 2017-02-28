@@ -165,7 +165,7 @@ For instance, if you called your war file "helloworld.war", the Start URL is ``h
 Once you specify the Start URL, halefBot should say: Hello World!
 
 Importing an Application from a .war File
-----------------------------------------
+-------------------------------------------
 
 Let's say you want to import an application someone else has already worked on and saved to a .war file. Here is what you'll need to do:
 
