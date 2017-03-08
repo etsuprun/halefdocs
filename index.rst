@@ -126,7 +126,7 @@ Drag the block called *PlayPrompt* onto the canvas. *PlayPrompt* outputs somethi
 1. Double-click the PlayPrompt on your canvas
 2. Under *Media*, click on `Not Configured`.
 3. Press *Add Entry*.
-4. In Content Type, choose Text.
+4. In Content Type, choose *Text*.
 5. In the text box, type "Hello world!"
 6. Hit OK three times.
 
@@ -211,8 +211,8 @@ Drag a *Question* block onto your canvas and connect the Begin block to it. Doub
 1. Set *User Input Style* to "S" and leave the drop-down at "Voice Only". (Do this first.)
 2. Set the *Name* for the question block. This name is arbitrary and will just help you identify the block on your canvas.
 3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, ``A_do_you_like_pizza``.
-4. Click on `Not Configured` next to "Prompt" (in the Media tab). Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
-5. Click on `Not Configured` next to Voice Grammar. Choose "GRXML File" (from the dropdown menu) and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
+4. Click on `Not Configured` next to *Prompt* (in the Media tab). Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
+5. Click on `Not Configured` next to *Voice Grammar*. Choose "GRXML File" (from the dropdown menu) and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
 
 Your question block should look like this:
 
