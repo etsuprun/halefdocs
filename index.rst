@@ -1,4 +1,4 @@
-.. halef documentation master file, created by
+﻿.. halef documentation master file, created by
    sphinx-quickstart on Fri Feb 17 10:19:05 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -295,7 +295,7 @@ Run autoggs.py
 
 Now that your callflow is complete, we're ready to run `autoggs.py` to convert our macro into JavaScript code.
 
-If you don't have it yet, download `Python 3`_.
+If you don't have it yet, download `Python 3`_.On the first installation window, make sure the checkbox that says “Add Python 3.6 to PATH” is checked.
 
 Open the terminal (Git Bash in Windows or a Mac/Linux terminal).
 
