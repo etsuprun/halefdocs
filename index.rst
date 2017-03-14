@@ -229,7 +229,7 @@ Fortunately, you don't need to know JavaScript to achieve the above goals. We've
 
 Drag a Script block and connect the Question block to it.
 
-Copy the following into the script block::
+Copy the following into the script block:
 
 	/*
 	.*yes.*	yes
