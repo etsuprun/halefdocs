@@ -24,8 +24,11 @@ Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 We assume that you are familiar with:
+ 
+- Using git or another version control system
+- Using the shell / command prompt terminal to run scripts
 
-- Using git and through directories on your computer using the command line—either through git bash on Windows or a terminal window on Mac/Linux. To learn about git and command line basics, check out the `git tutorial`_.
+To learn about git and command line basics, check out the `git tutorial`_. 
 
 - Using regular expressions, which we use to search for patterns in the users' responses. For an introduction to regular expressions, we recommend the `RegexOne tutorial`_.
 
