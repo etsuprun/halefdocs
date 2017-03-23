@@ -214,8 +214,8 @@ Drag a *Question* block onto your canvas and connect the Begin block to it. Doub
 1. Set *User Input Style* to "S" and leave the drop-down at "Voice Only". (Do this first.)
 2. Set the *Name* for the question block. This name is arbitrary and will just help you identify the block on your canvas.
 3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, ``A_do_you_like_pizza``.
-4. Click on `Not Configured` next to *Prompt* (in the Media tab). Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
-5. Click on `Not Configured` next to *Voice Grammar*. Choose "Grammar File" (from the dropdown menu) and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
+4. Double-click on `Not Configured` next to *Prompt* (in the Media tab). Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
+5. Double-click on `Not Configured` next to *Voice Grammar*. Choose "Grammar File" (from the dropdown menu) and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
 
 Your question block should look like this:
 
@@ -232,7 +232,7 @@ Fortunately, you don't need to know JavaScript to achieve the above goals. We've
 
 Drag a Script block and connect the Question block to it.
 
-Copy the following into the script block::
+Type the following into the script block. (Don't copy/paste as formatting may be affected.) A description of the syntax is included below for clarity::
 
 	/*
 	.*yes.*	yes
@@ -240,15 +240,13 @@ Copy the following into the script block::
 	.*no.*	no
 	*/
 
+The syntax of each line of the macro is as follows::  [regular expression matching the response] [a single tab character] [name of semantic category]
+
 When we run `autoggs.py` on this application, the script will find the macros (everything between `/*` and `*/`) and convert them into code that will:
 
 * Log ``A_do_you_like_pizza`` (the variable containing the response to the question block) to the server
 * If the response contains the strings "yes" or "yeah", set the variable ``SC_do_you_like_pizza`` to equal to "yes". 
 * If the response contains the string "no", set the variable ``SC_do_you_like_pizza`` to equal to "no".
-
-The syntax of each line of the macro is as follows::
-	
-	[regular expression matching the response] [tab character] [name of semantic category]
 
 Create a Branch block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
