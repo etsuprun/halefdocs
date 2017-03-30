@@ -463,7 +463,7 @@ To add a new design canvas to a Workflow (and configure a portal between the new
 
 .. image:: /images/secondcanvas.png
 
-4. Now, let's set up a Portal Entry and connect it to the second canvas. Drag and drop `Portal Entry` from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to. 
+4. Let's set up a Portal Entry and connect it to the second canvas. Drag and drop `Portal Entry` from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to. 
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
