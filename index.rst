@@ -175,7 +175,7 @@ Let's say you want to import an application someone else has already worked on a
 1. If you're using git, do a ``git pull`` and get the latest copy of the .war file.
 2. Switch workspaces in OpenVXML. (We recommend one Halef application per workspace.) Go to File → Switch Workspace → Other ... and give a path where the new workspace should be created, for example: ``c:\openvxml\pizza2``
 3. Open the OpenVXML perspective: `Window` → `Open Perspective` → `Other...` and choose "OpenVXML".
-4. `File` → `Import...` Choose "Existing Projects into Workspace". Select archive file, hit `Browse...` In the lower right corner, choose `*.*` and then choose your .war file.
+4. `File` → `Import...` Choose "General" -> "Existing Projects into Workspace" and click on "Next". Then, select the button next to "Select archive file:", hit `Browse...` and navigate to the location of the .war file that you would like to import. In the drop-down menu with file extensions (which is located in the lower right corner of the dialog box on Windows), choose `*.*`. Then choose the .war file that you would like to import and select "Open".
 5. Hit "Finish" in the window that appears.
 6. You may or may not get an error message. If you do, and you can't access Main canvas, restart Eclipse.
 
