@@ -6,9 +6,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Pythia Development Toolkit &#8212; halef  documentation</title>
+    <title>OpenVXML Without Tears &mdash; halef  documentation</title>
     
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -17,43 +17,407 @@
         VERSION:     '',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
+        HAS_SOURCE:  true
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="top" title="halef  documentation" href="#" /> 
   </head>
-  <body role="document">
-  
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">halef  documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body" role="main">
+          <div class="body">
             
-  <div class="section" id="pythia-development-toolkit">
-<h1>Pythia Development Toolkit<a class="headerlink" href="#pythia-development-toolkit" title="Permalink to this headline">¶</a></h1>
-<p>Pythia is a collection of scripts written in Python to facilitate the development of interactive applications in the Halef framework.</p>
-<div class="section" id="testproject-py-a-script-to-qc-an-application-prior-to-deployment">
-<h2>testproject.py: a script to QC an application prior to deployment<a class="headerlink" href="#testproject-py-a-script-to-qc-an-application-prior-to-deployment" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="openvxml-without-tears-1">
+<h1>OpenVXML Without Tears <a class="footnote-reference" href="#id2" id="id1">[1]</a><a class="headerlink" href="#openvxml-without-tears-1" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body">Vikram Ramanarayanan and Eugene Tsuprun (with inputs from the OpenVXML Setup and User Guides)</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this manual, you will learn how to:</p>
+<ul class="simple">
+<li>Install Eclipse and the OpenVXML plugin for Eclipse</li>
+<li>Create your OpenVXML first project—a &#8220;Hello world&#8221; chatbot application</li>
+<li>Deploy the application</li>
+<li>Use halefBot (a text interface to Halef) to test out the application</li>
+<li>Use <cite>autoggs.py</cite> to add logging and semantic categorization capabilities</li>
+</ul>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<p>We assume that you are familiar with:</p>
+<ul class="simple">
+<li>Using git or another version control system</li>
+<li>Using the shell / command prompt terminal to run scripts</li>
+</ul>
+<p>To learn about git and command line basics, check out the <a class="reference external" href="https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository">git tutorial</a>.</p>
+<ul class="simple">
+<li>Using regular expressions, which we use to search for patterns in the users&#8217; responses. For an introduction to regular expressions, we recommend the <a class="reference external" href="https://www.regexone.com">RegexOne tutorial</a>.</li>
+</ul>
 </div>
-<div class="section" id="autoggs-py-a-script-to-add-logging-and-semantic-categorization-functionality-to-an-application">
-<h2>autoggs.py: a script to add logging and semantic categorization functionality to an application<a class="headerlink" href="#autoggs-py-a-script-to-add-logging-and-semantic-categorization-functionality-to-an-application" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="text-to-tts-py-a-script-to-convert-text-prompts-into-audio-prompts">
-<h2>text_to_tts.py: a script to convert text prompts into audio prompts<a class="headerlink" href="#text-to-tts-py-a-script-to-convert-text-prompts-into-audio-prompts" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
+<div class="section" id="installing-eclipse-and-openvxml">
+<h2>Installing Eclipse and OpenVXML<a class="headerlink" href="#installing-eclipse-and-openvxml" title="Permalink to this headline">¶</a></h2>
+<p>Eclipse is an IDE (interactive development environment) that will allow you, among other things, to design call workflows compatible with Halef.</p>
+<div class="section" id="install-java-development-kit-8">
+<h3>Install Java Development Kit 8<a class="headerlink" href="#install-java-development-kit-8" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">JDK 8</a> is a prerequisite for Eclipse and OpenVXML. Download and install it.</p>
 </div>
+<div class="section" id="install-eclipse">
+<h3>Install Eclipse<a class="headerlink" href="#install-eclipse" title="Permalink to this headline">¶</a></h3>
+<p>Download and install <a class="reference external" href="http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2">Eclipse</a>. Do not use the latest version—only this one.</p>
+</div>
+<div class="section" id="install-the-openvxml-plug-in-for-eclipse">
+<h3>Install the OpenVXML plug-in for Eclipse<a class="headerlink" href="#install-the-openvxml-plug-in-for-eclipse" title="Permalink to this headline">¶</a></h3>
+<p>Download OpenVXML 5.1. Here is the compiled <a class="reference external" href="https://sourceforge.net/p/halef/openvxml/ci/master/tree/OpenVXML-5.1.0/binary/OpenVXML_5.1.0.201506111143.zip">OpenVXML for Windows</a>.</p>
+<p>Unzip the file.</p>
+<p>Start Eclipse.</p>
+<p>From the menu, select <em>Help</em> → <em>Install New Software...</em>.</p>
+<p>In the Install dialog that appears, in the &#8220;Work with:&#8221; field at the top, hit <cite>Add...</cite>.</p>
+<p>Hit <cite>Local...</cite> and select the unzipped directory: <tt class="docutils literal"><span class="pre">OpenVXML_5.1.0201506111143</span></tt>.</p>
+<p>Make sure all the check boxes in the bottom part of the screen are unchecked (<cite>Show only the latest versions of available software</cite>, <cite>Group items by category</cite>, etc.)</p>
+<p>Select All packages.</p>
+<img alt="_images/install_openvxml.png" src="_images/install_openvxml.png" />
+<p>On the <em>Review Licenses</em> screen, there aren&#8217;t actually any licenses to review.  Just click <em>I accept the terms...</em> and then <em>Finish</em>.</p>
+<p>During the installation you&#8217;ll need to click OK once, to allow unsigned content to be installed.</p>
+<p>When the installation is complete, restart Eclipse.</p>
+<p>Now that you have installed OpenVXML, change your perspective (the windows and tabs you see in Eclipse). From the menu, select <em>Window</em> → <em>Open Perspective</em> → <em>Other...</em> → <em>OpenVXML</em>.</p>
+</div>
+</div>
+<div class="section" id="creating-a-hello-world-project">
+<h2>Creating a Hello World Project<a class="headerlink" href="#creating-a-hello-world-project" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-the-voice-and-workflows">
+<h3>Set up the voice and workflows<a class="headerlink" href="#set-up-the-voice-and-workflows" title="Permalink to this headline">¶</a></h3>
+<p>Every OpenVXML project consists of two components:</p>
+<ul class="simple">
+<li>The <em>Voice</em>, which stores all your audio files</li>
+<li>The <em>Workflows</em>, a visual representation of the chatbot application you want to design.</li>
+</ul>
+<p>First, let&#8217;s create a new voice project: <em>File</em> → <em>New</em> → <em>Project</em> → <em>Voice Tool Wizards</em> → <em>Voice</em></p>
+<p>Call the voice project <em>HelloWorld_Voice</em>.</p>
+<p>You should now see the voice project in your Project Explorer pane:</p>
+<img alt="_images/create_voice.png" src="_images/create_voice.png" />
+<p>Now, create the interactive workflow: <em>File</em> → <em>New</em> → <em>Project</em> → <em>Voice Tool Wizards</em> → Interactive Workflow</p>
+<p>The application name for this and all Halef workflows should be <em>Deploy_Workflow</em>. Hit <em>Next</em>.</p>
+<p>In the Branding dialog box, leave Brands at <em>Default</em>. Hit <em>Next</em>.</p>
+<p>On the <em>Interaction Type Support</em> dialog box, leave <em>Voice Interaction</em> checked. Hit <em>Next</em>.</p>
+<p>On the <em>Language Support</em> dialog box, associate your workflow with your voice by clicking <cite>Not Configured</cite> and choosing <em>HelloWorld_Voice</em>:</p>
+<img alt="_images/associate_voice.png" src="_images/associate_voice.png" />
+<p>You have now created your voice and your workflow, and you have associated the two. You should see both <em>HelloWorld_Voice</em> and <em>Deploy_Workflow</em> in the Project Explorer pane.</p>
+</div>
+<div class="section" id="create-a-text-based-hello-world-canvas">
+<h3>Create a text-based Hello World canvas<a class="headerlink" href="#create-a-text-based-hello-world-canvas" title="Permalink to this headline">¶</a></h3>
+<p>In this part of the tutorial, you will create and deploy a text-based chatbot that says &#8220;Hello World&#8221;.</p>
+<p>In Project Explorer, expand <em>Deploy_Workflow</em> and then <em>Workflow Design</em>. Open up <em>Main Canvas.canvas</em>. As the name suggests, this is the canvas on which you will be drawing a flowchart-like representation of your chatbot. You should now see something like this:</p>
+<img alt="_images/canvas.png" src="_images/canvas.png" />
+<p>The <em>Project Explorer</em> (on the left) is where you should see the Voice and Workflow projects in your Eclipse workspace.</p>
+<p>The <em>Design Area</em> (in the middle) shows the call flow of the currently selected canvas.</p>
+<p>The <em>Voice Pallet</em> (on the right) displays the available blocks for the application.</p>
+<p>Drag the block called <em>PlayPrompt</em> onto the canvas. <em>PlayPrompt</em> outputs something to your user–either a sound file or some text. Let&#8217;s have it say &#8220;Hello world!&#8221;:</p>
+<ol class="arabic simple">
+<li>Double-click the PlayPrompt on your canvas</li>
+<li>Under <em>Media</em>, click on <cite>Not Configured</cite>.</li>
+<li>Press <em>Add Entry</em>.</li>
+<li>In Content Type, choose <em>Text</em>.</li>
+<li>In the text box, type &#8220;Hello world!&#8221;</li>
+<li>Hit OK three times.</li>
+</ol>
+<img alt="_images/hello_world.png" src="_images/hello_world.png" />
+<p>Now that you&#8217;ve created the PlayPrompt, let&#8217;s make sure your application knows to play it when you start interacting with the chatbot. To do this, click on the arrow in the lower right corner of the Begin block and drag and drop it onto the PlayPrompt block. In the ensuing dialog box, select <em>Continue</em> and hit OK.</p>
+<p>Now, let&#8217;s create a Return block to mark the end of the application. Drag the <em>Return</em> block from the Voice pallet onto your canvas, and connect your PlayPrompt to Return the same way: click the little arrow on the PlayPrompt, drag it to Return, and hit OK.</p>
+<p>Your canvas should now look like this:</p>
+<img alt="_images/hello_world_canvas.png" src="_images/hello_world_canvas.png" />
+</div>
+<div class="section" id="save-and-export-your-project">
+<h3>Save and export your project<a class="headerlink" href="#save-and-export-your-project" title="Permalink to this headline">¶</a></h3>
+<p>We need to export the newly created project into a Web ARchive (WAR) application that can be served by the web server as VoiceXML and then read by Halef&#8217;s Voice Browser. A voice browser browses voice/speech web pages (in the VoiceXML format) much like Firefox or Chrome browse HTML pages.</p>
+<ol class="arabic simple">
+<li>Save the project: <em>File</em> → <em>Save All</em></li>
+<li>Go to <em>File</em> → <em>Export ...</em></li>
+<li>Under Voice Tools, choose &#8220;Web Application&#8221;</li>
+<li>Select &#8220;Archive file&#8221;.</li>
+<li>Choose where you&#8217;d like to save the file. We recommend saving it in a git repository for better version control.</li>
+</ol>
+</div>
+<div class="section" id="test-your-application-on-halefbot">
+<h3>Test your application on halefBot<a class="headerlink" href="#test-your-application-on-halefbot" title="Permalink to this headline">¶</a></h3>
+<p>halefBot is the text-based interface to Halef.</p>
+<p>Open up halefBot URL (ask your system administrator for the URL).</p>
+<p>The Start URL is [your war file name without &#8216;.war&#8217;]/Deploy_Workflow/Begin.</p>
+<p>For instance, if you called your war file &#8220;helloworld.war&#8221;, the Start URL is <tt class="docutils literal"><span class="pre">helloworld/Deploy_Workflow/Begin</span></tt>.</p>
+<p>Once you specify the Start URL, halefBot should say: Hello World!</p>
+</div>
+</div>
+<div class="section" id="importing-an-application-from-a-war-file">
+<h2>Importing an Application from a .war File<a class="headerlink" href="#importing-an-application-from-a-war-file" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s say you want to import an application someone else has already worked on and saved to a .war file. Here is what you&#8217;ll need to do:</p>
+<ol class="arabic simple">
+<li>If you&#8217;re using git, do a <tt class="docutils literal"><span class="pre">git</span> <span class="pre">pull</span></tt> and get the latest copy of the .war file.</li>
+<li>Switch workspaces in OpenVXML. (We recommend one Halef application per workspace.) Go to File → Switch Workspace → Other ... and give a path where the new workspace should be created, for example: <tt class="docutils literal"><span class="pre">c:\openvxml\pizza2</span></tt></li>
+<li>Open the OpenVXML perspective: <cite>Window</cite> → <cite>Open Perspective</cite> → <cite>Other...</cite> and choose &#8220;OpenVXML&#8221;.</li>
+<li><cite>File</cite> → <cite>Import...</cite> Choose &#8220;General&#8221; -&gt; &#8220;Existing Projects into Workspace&#8221; and click on &#8220;Next&#8221;. Then, select the button next to &#8220;Select archive file:&#8221;, hit <cite>Browse...</cite> and navigate to the location of the .war file that you would like to import. In the drop-down menu with file extensions (which is located in the lower right corner of the dialog box on Windows), choose <cite>*.*</cite>. Then choose the .war file that you would like to import and select &#8220;Open&#8221;.</li>
+<li>Hit &#8220;Finish&#8221; in the window that appears.</li>
+<li>You may or may not get an error message. If you do, and you can&#8217;t access Main canvas, restart Eclipse.</li>
+</ol>
+</div>
+<div class="section" id="creating-a-branching-application">
+<h2>Creating a Branching Application<a class="headerlink" href="#creating-a-branching-application" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s now create a more complex callflow. In this section of the tutorial, you will build a text-based chatbot that will:</p>
+<ol class="arabic simple">
+<li>Ask the user if they like pizza</li>
+<li>Save the user&#8217;s response into the database on our server</li>
+<li>Categorize the user&#8217;s response into the semantic categories of &#8220;yes&#8221; or &#8220;no&#8221;</li>
+<li>Follow up with an appropriate response (&#8220;Me too! I love pizza!&#8221; or &#8220;I&#8217;m sorry to hear you don&#8217;t like pizza.&#8221;)</li>
+<li>Ask for clarification, if the original response was not understood</li>
+</ol>
+<p>Our callflow will look like this:</p>
+<img alt="_images/pizza_callflow.png" src="_images/pizza_callflow.png" />
+<div class="section" id="set-up-your-workspace-and-project">
+<h3>Set up your workspace and project<a class="headerlink" href="#set-up-your-workspace-and-project" title="Permalink to this headline">¶</a></h3>
+<p>We find it easiest to keep each OpenVXML project in its own Eclipse workspace. So if you already have a project open in Eclipse, you may want to switch to another Eclipse workspace. Go to <em>File</em> → <em>Switch Workspace</em> → <em>Other...</em> and choose where you&#8217;d like your new workspace to be.</p>
+<p>To restore your Project Explorer, Design Area, and Voice Pallet, go to <em>Window</em> → <em>Open Perspective</em> → <em>Other...</em>, and choose OpenVXML.</p>
+<p>Now, follow the instructions in <a class="reference internal" href="#creating-a-hello-world-project">Creating a Hello World Project</a> to create your voice and workflow: Pizza_Voice and Deploy_Workflow.</p>
+</div>
+<div class="section" id="configure-the-question-block">
+<h3>Configure the question block<a class="headerlink" href="#configure-the-question-block" title="Permalink to this headline">¶</a></h3>
+<p>In contrast to a PlayPrompt, which plays back a message for the user and expects no response, a Question block allows us to prompt the user for a response. In this case, we&#8217;ll be asking if the user likes pizza.</p>
+<p>Drag a <em>Question</em> block onto your canvas and connect the Begin block to it. Double click it to edit:</p>
+<ol class="arabic simple">
+<li>Set <em>User Input Style</em> to &#8220;S&#8221; and leave the drop-down at &#8220;Voice Only&#8221;. (Do this first.)</li>
+<li>Set the <em>Name</em> for the question block. This name is arbitrary and will just help you identify the block on your canvas.</li>
+<li>Set a <em>Variable Name</em> for the variable that will store the response for our question. Our convention is to start the variable name with <cite>A_</cite>, for instance, <tt class="docutils literal"><span class="pre">A_do_you_like_pizza</span></tt>.</li>
+<li>Double-click on <cite>Not Configured</cite> next to <em>Prompt</em> (in the Media tab). Press &#8220;Add Entry&#8221;. In the dialog box that appears, set Content Type to Text. Type &#8220;Do you like pizza?&#8221; in the text area. That&#8217;s the text that will be shown to the test taker. Hit OK twice.</li>
+<li>Double-click on <cite>Not Configured</cite> next to <em>Voice Grammar</em>. Choose &#8220;Grammar File&#8221; (from the dropdown menu) and then type <cite>ignore.wfst</cite>. This is the name of the language model Halef will be using when converting the user&#8217;s speech input into text. Because we are building a text-based chatbot for now, we don&#8217;t need to customize a language model. We do, however, need to specify a value here, because Halef expects one.</li>
+</ol>
+<p>Your question block should look like this:</p>
+<img alt="_images/question_block.png" src="_images/question_block.png" />
+</div>
+<div class="section" id="create-a-script-block">
+<h3>Create a Script block<a class="headerlink" href="#create-a-script-block" title="Permalink to this headline">¶</a></h3>
+<p>Script blocks allow you to use the JavaScript language to manipulate variables, communicate with external services, and control the flow of the application.</p>
+<p>In this application, we will use the script block to classify the response into one of two categories: yes or no. We will also send the user&#8217;s response to a back-end service, which will then store it into a database.</p>
+<p>Fortunately, you don&#8217;t need to know JavaScript to achieve the above goals. We&#8217;ve created a Python script called <cite>autoggs.py</cite> to help you.</p>
+<p>Drag a Script block and connect the Question block to it.</p>
+<p>Type the following into the script block. (Don&#8217;t copy/paste as formatting may be affected.) A description of the syntax is included below for clarity:</p>
+<div class="highlight-python"><div class="highlight"><pre>/*
+.*yes.* yes
+.*yeah.*        yes
+.*no.*  no
+*/
+</pre></div>
+</div>
+<p>The syntax of each line of the macro is as follows::&nbsp;&nbsp;[regular expression matching the response] [a single tab character] [name of semantic category]</p>
+<p>When we run <cite>autoggs.py</cite> on this application, the script will find the macros (everything between <cite>/*</cite> and <cite>*/</cite>) and convert them into code that will:</p>
+<ul class="simple">
+<li>Log <tt class="docutils literal"><span class="pre">A_do_you_like_pizza</span></tt> (the variable containing the response to the question block) to the server</li>
+<li>If the response contains the strings &#8220;yes&#8221; or &#8220;yeah&#8221;, set the variable <tt class="docutils literal"><span class="pre">SC_do_you_like_pizza</span></tt> to equal to &#8220;yes&#8221;.</li>
+<li>If the response contains the string &#8220;no&#8221;, set the variable <tt class="docutils literal"><span class="pre">SC_do_you_like_pizza</span></tt> to equal to &#8220;no&#8221;.</li>
+</ul>
+</div>
+<div class="section" id="create-a-branch-block">
+<h3>Create a Branch block<a class="headerlink" href="#create-a-branch-block" title="Permalink to this headline">¶</a></h3>
+<p>Drag a Branch block from the Voice pallet and connect the Script block to it. The Branch block is what allows to route the application in accordance with the semantic category of the response to &#8220;Do you like pizza?&#8221;</p>
+<p>We will build exit paths to deal with three types of responses:</p>
+<ul class="simple">
+<li>responses that fall into the category of &#8220;yes&#8221; (users who like pizza)</li>
+<li>responses that fall into the category of &#8220;no&#8221; (users who don&#8217;t like pizza)</li>
+<li>responses which did not fall into either category (i.e., what our script failed to categorize)</li>
+</ul>
+<p>Open the Branch block and hit &#8220;Add Branch&#8221;.</p>
+<p><cite>Exit Path Name</cite> is an arbitrary name, but we recommend keeping it consistent with the name of the semantic category. Let&#8217;s first make a branch for the &#8220;yes&#8221; category. Set Exit Path Name to <cite>yes</cite>.</p>
+<p>The <cite>Expression</cite> is a JavaScript statement that should return <tt class="docutils literal"><span class="pre">true</span></tt> or <tt class="docutils literal"><span class="pre">false</span></tt>. If the statement is <tt class="docutils literal"><span class="pre">true</span></tt>, the call will be routed through this exit path. In this case, we will want to enter: <tt class="docutils literal"><span class="pre">Variables.SC_do_you_like_pizza</span> <span class="pre">==</span> <span class="pre">&quot;yes&quot;</span></tt></p>
+<img alt="_images/branch.png" src="_images/branch.png" />
+<p>Now, make another exit path for the &#8220;no&#8221; category. The Exit Path Name should say <cite>no</cite>, and the Expression should read: <tt class="docutils literal"><span class="pre">Variables.SC_do_you_like_pizza</span> <span class="pre">==</span> <span class="pre">&quot;no&quot;</span></tt></p>
+<p>Your Branch properties should now look like this:</p>
+<img alt="_images/branch_block.png" src="_images/branch_block.png" />
+<p>We do not need to define an Expression for the third exit path (neither &#8220;yes&#8221; nor &#8220;no&#8221;). This so-called Default path will be triggered if the JavaScript expressions for all the other semantic categories were computed to <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+</div>
+<div class="section" id="add-the-playprompts">
+<h3>Add the PlayPrompts<a class="headerlink" href="#add-the-playprompts" title="Permalink to this headline">¶</a></h3>
+<p>Depending on the category of the response, we will respond with a relevant PlayPrompt—&#8221;Me too! I love pizza!&#8221;, &#8220;I&#8217;m sorry to hear you don&#8217;t like pizza.&#8221;, or &#8220;Sorry, I don&#8217;t understand.&#8221;. Create three new PlayPrompts that say this.</p>
+</div>
+<div class="section" id="add-the-connectors-and-return-block">
+<h3>Add the connectors and Return block<a class="headerlink" href="#add-the-connectors-and-return-block" title="Permalink to this headline">¶</a></h3>
+<p>Draw an arrow from your Branch to &#8220;Me too! I love pizza!&#8221; In the ensuing dialog box, choose the &#8220;yes&#8221; exit path.</p>
+<p>Now, draw an arrow from the Branch to &#8220;I&#8217;m sorry to hear you don&#8217;t like pizza.&#8221; Choose the &#8220;no&#8221; exit path.</p>
+<p>Draw an arrow from the Branch to &#8220;I don&#8217;t understand&#8221; and choose the Default exit path. If the system doesn&#8217;t understand the response, let&#8217;s ask the user to repeat it. To do so, connect the &#8220;I don&#8217;t understand&#8221; PlayPrompt back to the &#8220;Do you like pizza?&#8221; question to create a loop.</p>
+<p>Finally, drag a Return block from the Voice Pallet. Connect the remaining two play prompts to a Return block to indicate the end of the application.</p>
+</div>
+<div class="section" id="run-autoggs-py">
+<h3>Run autoggs.py<a class="headerlink" href="#run-autoggs-py" title="Permalink to this headline">¶</a></h3>
+<p>Now that your callflow is complete, we&#8217;re ready to run <cite>autoggs.py</cite> to convert our macro into JavaScript code.</p>
+<p>If you don&#8217;t have it yet, download <a class="reference external" href="https://www.python.org/downloads/">Python 3</a>. On the first installation window, make sure the checkbox that says “Add Python 3.6 to PATH” is checked.</p>
+<p>Open the terminal (Git Bash in Windows or a Mac/Linux terminal).</p>
+<p>Install the <cite>pandas</cite> package for Python:</p>
+<div class="highlight-python"><div class="highlight"><pre>pip install pandas
+</pre></div>
+</div>
+<p>Clone the <cite>pythia</cite> repository:</p>
+<div class="highlight-python"><div class="highlight"><pre>git clone [repository location goes here]
+</pre></div>
+</div>
+<p>Go into the <cite>pythia</cite> directory and run <cite>autoggs.py</cite>:</p>
+<div class="highlight-python"><div class="highlight"><pre>python autoggs.py [the location of your Eclipse workspace directory]
+</pre></div>
+</div>
+<p>Here is what the output should look like:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ python autoggs.py /c/openvxml/pizza
+Reading in the workspace...
+Parsing script for the do_you_like_pizza question block ...
+Variable name: do_you_like_pizza
+[&#39;.*yes.*&#39;, &#39;yes&#39;]
+[&#39;.*yeah.*&#39;, &#39;yes&#39;]
+[&#39;.*no.*&#39;, &#39;no&#39;]
+Operating in REGEX mode...
+Saving C:/openvxml/pizza\Deploy_Workflow\Workflow Design\Main Canvas.canvas
+</pre></div>
+</div>
+</div>
+<div class="section" id="save-and-deploy">
+<h3>Save and deploy<a class="headerlink" href="#save-and-deploy" title="Permalink to this headline">¶</a></h3>
+<p>Let&#8217;s open our project in Eclipse again and have a look. Pull up the script block, and you should see this JavaScript code:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="cm">/*.*yes.*       yes</span>
+
+<span class="cm">.*yeah.*        yes</span>
+
+<span class="cm">.*no.*  no*/</span>
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;DEVELOPER LOG: Entering parsing script&quot;</span><span class="p">);</span>
+<span class="c1">// If JVXML session ID exists, use that. Otherwise, we&#39;re probably in halefBot, so let&#39;s generate one.</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">sessionId</span> <span class="o">==</span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// if session ID is undefined (because we&#39;re accessing via HalefBot), let&#39;s make one.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">InitialParameters</span><span class="p">[</span><span class="s1">&#39;sessionId&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">Variables</span><span class="p">.</span><span class="nx">sessionId</span> <span class="o">=</span> <span class="s1">&#39;halefbot_&#39;</span> <span class="o">+</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">dataCollectionGroup</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">extension</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">().</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10000000</span><span class="p">).</span><span class="nx">toString</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">Variables</span><span class="p">.</span><span class="nx">sessionId</span> <span class="o">=</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">InitialParameters</span><span class="p">[</span><span class="s1">&#39;sessionId&#39;</span><span class="p">];</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">Variables</span><span class="p">.</span><span class="nx">SC_do_you_like_pizza</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+<span class="c1">//Please fill in the appropriate variable name below</span>
+
+<span class="kd">var</span> <span class="nx">myJsStr</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span> <span class="o">+</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">A_do_you_like_pizza</span><span class="p">;</span>
+
+
+<span class="c1">//Convert input variable to lower case</span>
+<span class="kd">var</span> <span class="nx">myJsStr_LC</span> <span class="o">=</span> <span class="nx">myJsStr</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span>
+
+<span class="c1">//Check for the presence of the &quot;yes&quot; semantic category</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">myJsStr_LC</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/.*yeah.*/gi</span><span class="p">)</span> <span class="o">||</span> <span class="nx">myJsStr_LC</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/.*yes.*/gi</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="nx">Variables</span><span class="p">.</span><span class="nx">SC_do_you_like_pizza</span> <span class="o">=</span> <span class="s2">&quot;yes&quot;</span><span class="p">;</span>
+        <span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;DEVELOPER LOG: Set flag variable SC_do_you_like_pizza to yes&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Check for the presence of the &quot;no&quot; semantic category</span>
+<span class="k">if</span><span class="p">(</span><span class="nx">myJsStr_LC</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/.*no.*/gi</span><span class="p">))</span>
+<span class="p">{</span>
+        <span class="nx">Variables</span><span class="p">.</span><span class="nx">SC_do_you_like_pizza</span> <span class="o">=</span> <span class="s2">&quot;no&quot;</span><span class="p">;</span>
+        <span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;DEVELOPER LOG: Set flag variable SC_do_you_like_pizza to no&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Condition to check if the ASR returned an empty string (corresponding to a NULL recognition or no-match hypothesis)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nx">myJsStr_LC</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="p">{</span>
+
+                <span class="nx">Variables</span><span class="p">.</span><span class="nx">SC_do_you_like_pizza</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span>
+
+                <span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;DEVELOPER LOG: Set flag to empty string&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;DEVELOPER LOG: Starting web service script&quot;</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">connection</span> <span class="o">=</span> <span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">URL</span><span class="p">(</span><span class="s2">&quot;http://&quot;</span><span class="o">+</span><span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">InetAddress</span><span class="p">.</span><span class="nx">getLocalHost</span><span class="p">().</span><span class="nx">getHostAddress</span><span class="p">()</span><span class="o">+</span><span class="s2">&quot;/PHP-Loggers/openvxml_logger.php&quot;</span><span class="p">).</span><span class="nx">openConnection</span><span class="p">();</span>
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;starting key.toString()&quot;</span><span class="p">);</span>
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;sessionId=&quot;</span><span class="o">+</span><span class="nx">Variables</span><span class="p">.</span><span class="nx">sessionId</span><span class="p">);</span>
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;InitialParameters=&quot;</span><span class="o">+</span><span class="nx">Variables</span><span class="p">.</span><span class="nx">InitialParameters</span><span class="p">);</span>
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;completing key.toString()&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">java</span><span class="p">.</span><span class="nx">lang</span><span class="p">.</span><span class="nb">String</span><span class="p">(</span><span class="s2">&quot;sessionId=&quot;</span><span class="o">+</span><span class="nx">Variables</span><span class="p">.</span><span class="nx">sessionId</span><span class="o">+</span><span class="s2">&quot;&amp;A_do_you_like_pizza=&quot;</span><span class="o">+</span><span class="nx">Variables</span><span class="p">.</span><span class="nx">A_do_you_like_pizza</span><span class="o">+</span><span class="s2">&quot;&amp;SC_do_you_like_pizza&#39;=&quot;</span><span class="o">+</span><span class="nx">Variables</span><span class="p">.</span><span class="nx">SC_do_you_like_pizza</span><span class="p">);</span>
+
+
+<span class="nx">connection</span><span class="p">.</span><span class="nx">setDoOutput</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nx">connection</span><span class="p">.</span><span class="nx">setRequestProperty</span><span class="p">(</span><span class="s2">&quot;Accept-Charset&quot;</span><span class="p">,</span> <span class="s2">&quot;UTF-8&quot;</span><span class="p">);</span>
+<span class="nx">connection</span><span class="p">.</span><span class="nx">setRequestProperty</span><span class="p">(</span><span class="s2">&quot;Content-Type&quot;</span><span class="p">,</span> <span class="s2">&quot;application/x-www-form-urlencoded;charset=UTF-8&quot;</span><span class="p">);</span>
+<span class="nx">connection</span><span class="p">.</span><span class="nx">getOutputStream</span><span class="p">().</span><span class="nx">write</span><span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">getBytes</span><span class="p">(</span><span class="s2">&quot;UTF-8&quot;</span><span class="p">));</span>
+<span class="kd">var</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">getInputStream</span><span class="p">();</span>
+<span class="nx">Log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&quot;DEVELOPER LOG: Completing web service script&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Great.</p>
+<p>Follow the instructions under <a class="reference internal" href="#save-and-export-your-project">Save and export your project</a> to save, export, deploy, and test your application.</p>
+<p>Open your project in halefBot and try a few different responses:</p>
+<img alt="_images/pizza_chat.png" src="_images/pizza_chat.png" />
+<p>You&#8217;ll note that the response in Russian (&#8220;я предпочитаю гамбургеры&#8221;) was not in our grammar, and so it correctly went to the Default exit path. The other two responses (&#8220;yeah of course I love pizza!&#8221; and &#8220;not so much&#8221;) were successfully captured by our regular expressions.</p>
+</div>
+</div>
+<div class="section" id="adding-counters">
+<h2>Adding Counters<a class="headerlink" href="#adding-counters" title="Permalink to this headline">¶</a></h2>
+<p>In our pizza callflow, there is no set limit as to how many times the user will get to the &#8220;I don&#8217;t understand&#8221; dialog state. As long as they keep saying something we don&#8217;t have in our semantic categories, the conversation can go on indefinitely.</p>
+<p>We can use simple counter logic to set a limit. Let&#8217;s do this:</p>
+<ol class="arabic simple">
+<li>Initialize a counter and set it to 0.</li>
+<li>Each time we hit the Default exit path (the response does not fit into the &#8220;yes&#8221; or &#8220;no&#8221; semantic categories), increment the counter by 1.</li>
+<li>If the counter is greater than 2, exit the application. Else, keep asking the user if they like pizza.</li>
+</ol>
+<p>We&#8217;ll revise our callflow to look like this:</p>
+<img alt="_images/pizza_counter.png" src="_images/pizza_counter.png" />
+<p>First, let&#8217;s initialize the counter. Open the Begin block and add a new variable called <tt class="docutils literal"><span class="pre">counter_do_you_like_pizza</span></tt>. Set Type to Decimal, and Value to 0.</p>
+<img alt="_images/begin_counter.png" src="_images/begin_counter.png" />
+<p>Note: we strongly recommend keeping your counter variable names exactly consistent with the prompt variable names (<tt class="docutils literal"><span class="pre">A_do_you_like_pizza</span></tt> in this case).</p>
+<p>In the first version of this callflow, our Default exit path was connected directly to the &#8220;I don&#8217;t understand&#8221; PlayPrompt. Now, we&#8217;ll want to change this logic so that before we end up at &#8220;I don&#8217;t understand&#8221;, we&#8217;ll first make sure that the user hasn&#8217;t already been there twice.</p>
+<p>Add another Script block to your canvas. If you&#8217;d like, give it a name like &#8220;increment counter&#8221;. Set the Default exit path of the branch to go to this new script block. In your script block, add this JavaScript to increment the counter:</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span class="nx">Variables</span><span class="p">.</span><span class="nx">counter_do_you_like_pizza</span> <span class="o">=</span> <span class="nx">Variables</span><span class="p">.</span><span class="nx">counter_do_you_like_pizza</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Now, after we run this code, we&#8217;ll want to decide whether the counter is greater than 2. To help with this, let&#8217;s use the <cite>Decision</cite> block from the Voice Pallet.</p>
+<p>The Decision block helps us formulate a single JavaScript expression that evaluates to <tt class="docutils literal"><span class="pre">true</span></tt> or <tt class="docutils literal"><span class="pre">false</span></tt>. Select <tt class="docutils literal"><span class="pre">counter_do_you_like_pizza</span></tt> on the left, <cite>Greater Than (&gt;)</cite> as the comparison operator, then Expression of <tt class="docutils literal"><span class="pre">2</span></tt> on the right.</p>
+<img alt="_images/counter_decision.png" src="_images/counter_decision.png" />
+<p>Just like a Branch block, a Decision block supports multiple exit paths. Connect the <tt class="docutils literal"><span class="pre">true</span></tt> exit path to another PlayPrompt that says something like: &#8220;Sorry you&#8217;re having trouble. Please try again later.&#8221; Connect the <tt class="docutils literal"><span class="pre">false</span></tt> exit path to our &#8220;I don&#8217;t understand&#8221; PlayPrompt, which then is connected back to the original prompt.</p>
+<p>Let&#8217;s save, deploy, and try this in halefBot:</p>
+<img alt="_images/halefbot_counter.png" src="_images/halefbot_counter.png" />
+<p>After the third time we hit the Default exit path, the counter was greater than 2, and so we got kicked out from the application.</p>
+</div>
+<div class="section" id="portals-extending-workflows-to-span-multiple-canvases">
+<h2>Portals: Extending Workflows to Span Multiple Canvases<a class="headerlink" href="#portals-extending-workflows-to-span-multiple-canvases" title="Permalink to this headline">¶</a></h2>
+<p>Using multiple canvases is a great way to separate an application into more manageable pieces.</p>
+<p>To add a new design canvas to a Workflow (and configure a portal between the new and existing canvas):</p>
+<ol class="arabic simple">
+<li>Right-click on the <cite>Workflow Design</cite> folder for <tt class="docutils literal"><span class="pre">Deploy_Workflow</span></tt> in the Project Explorer and select:</li>
+</ol>
+<blockquote>
+<div><cite>New</cite> → <cite>Other</cite> → <cite>Voice Tools Wizard</cite> -&gt; <cite>Design Document</cite>. Hit &#8220;Next&#8221;. This will open the new design document wizard. Give the new canvas a name and hit &#8220;Finish&#8221;.</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Enter a name for the new design canvas in the input box (for example, “SecondCanvas”. Note: This name must be unique amongst the existing design canvases in the application.</li>
+<li>When you open up the new canvas, you&#8217;ll see a <cite>Portal Exit</cite> block on the new canvas.</li>
+</ol>
+<img alt="_images/secondcanvas.png" src="_images/secondcanvas.png" />
+<ol class="arabic simple" start="4">
+<li>Now, let&#8217;s set up a Portal Entry and connect it to the second canvas. Drag and drop <cite>Portal Entry</cite> from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to.</li>
+</ol>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The absence of tears is not guaranteed.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -61,59 +425,80 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Pythia Development Toolkit</a><ul>
-<li><a class="reference internal" href="#testproject-py-a-script-to-qc-an-application-prior-to-deployment">testproject.py: a script to QC an application prior to deployment</a></li>
-<li><a class="reference internal" href="#autoggs-py-a-script-to-add-logging-and-semantic-categorization-functionality-to-an-application">autoggs.py: a script to add logging and semantic categorization functionality to an application</a></li>
-<li><a class="reference internal" href="#text-to-tts-py-a-script-to-convert-text-prompts-into-audio-prompts">text_to_tts.py: a script to convert text prompts into audio prompts</a></li>
+<li><a class="reference internal" href="#">OpenVXML Without Tears </a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installing-eclipse-and-openvxml">Installing Eclipse and OpenVXML</a><ul>
+<li><a class="reference internal" href="#install-java-development-kit-8">Install Java Development Kit 8</a></li>
+<li><a class="reference internal" href="#install-eclipse">Install Eclipse</a></li>
+<li><a class="reference internal" href="#install-the-openvxml-plug-in-for-eclipse">Install the OpenVXML plug-in for Eclipse</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#creating-a-hello-world-project">Creating a Hello World Project</a><ul>
+<li><a class="reference internal" href="#set-up-the-voice-and-workflows">Set up the voice and workflows</a></li>
+<li><a class="reference internal" href="#create-a-text-based-hello-world-canvas">Create a text-based Hello World canvas</a></li>
+<li><a class="reference internal" href="#save-and-export-your-project">Save and export your project</a></li>
+<li><a class="reference internal" href="#test-your-application-on-halefbot">Test your application on halefBot</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#importing-an-application-from-a-war-file">Importing an Application from a .war File</a></li>
+<li><a class="reference internal" href="#creating-a-branching-application">Creating a Branching Application</a><ul>
+<li><a class="reference internal" href="#set-up-your-workspace-and-project">Set up your workspace and project</a></li>
+<li><a class="reference internal" href="#configure-the-question-block">Configure the question block</a></li>
+<li><a class="reference internal" href="#create-a-script-block">Create a Script block</a></li>
+<li><a class="reference internal" href="#create-a-branch-block">Create a Branch block</a></li>
+<li><a class="reference internal" href="#add-the-playprompts">Add the PlayPrompts</a></li>
+<li><a class="reference internal" href="#add-the-connectors-and-return-block">Add the connectors and Return block</a></li>
+<li><a class="reference internal" href="#run-autoggs-py">Run autoggs.py</a></li>
+<li><a class="reference internal" href="#save-and-deploy">Save and deploy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#adding-counters">Adding Counters</a></li>
+<li><a class="reference internal" href="#portals-extending-workflows-to-span-multiple-canvases">Portals: Extending Workflows to Span Multiple Canvases</a></li>
 </ul>
 </li>
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, ETS.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
-      
-      |
-      <a href="_sources/index.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">halef  documentation</a> &raquo;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer">
+        &copy; Copyright 2017, ETS.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
   </body>
 </html>
