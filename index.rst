@@ -308,7 +308,7 @@ Clone the `pythia` repository::
 	
 	git clone [repository location goes here]
 
-Go into the `pythia` directory and run `autoggs.py`::
+Go into the `pythia` directory and run `autoggs.py` (NB: `autoggs.py` assumes that the OpenVXML workflow is named Deploy_Workflow)::
 	
 	python autoggs.py [the location of your Eclipse workspace directory]
 
