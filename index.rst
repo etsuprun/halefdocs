@@ -2,4 +2,4 @@ Welcome to the Halef Documentation Site
 ===========================================
 
 :ref: `openvxml`
-ref: `halef_setup`
+:ref: `halef_setup`
