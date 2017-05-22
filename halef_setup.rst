@@ -3,17 +3,25 @@ Halef Setup Process
 ===================
 
 How to setup Kaldi Recognizer and Test Recognition Model
+
 How to setup Cairo Speech Server
+
 How to setup JvoiceXML Voice Browser Application
+
 
 
 How to setup Kaldi Recognizer and Test Recognition Model
 --------------------------------------------------------
 
 1. Make sure that you have latest Ubuntu updates
+
 sudo apt-get update
+
 sudo apt-get dist-upgrade
+
 sudo apt-get upgrade
+
+
 
 2. Install libraries required for Kaldi recognizer
 sudo apt-get install zlib1g-dev
