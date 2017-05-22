@@ -2,7 +2,7 @@ Welcome to the Halef Documentation Site
 ===========================================
 
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   openvxml
   halef_setup
