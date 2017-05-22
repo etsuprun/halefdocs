@@ -54,9 +54,21 @@ mkdir -p /export/Apps/KALDI/2015-12-21/deployment/bin
 
 cd /export/Apps/KALDI/2015-12-21/deployment
 
-tar xzvf models.tar.gz
-
 cp /export/Apps/KALDI/2015-12-21/halef-cassandra/kaldi-trunk/src/online2bin/STRM-ASR-server /export/Apps/KALDI/2015-12-21/deployment/bin
 
 chown -R <your_login>:<your_group> /export/Apps/KALDI/2015-12-21
+
+5. Copy recognition models and startup scripts 
+
+cd /export/Apps/KALDI/2015-12-21/deployment/
+
+tar xzvf models.tar.gz
+
+tar xzvf 9404.tar.gz
+
+6. Start Kaldi instance
+
+cd /export/Apps/KALDI/2015-12-21/deployment/srv/9404
+
+./server.sh &
 
