@@ -116,6 +116,32 @@ How to setup JvoiceXML Voice Browser Application
 *git clone https://github.com/JVoiceXML/JVoiceXML.git*
 
 
+2. Configure JvoiceXML by copying DB logging file from Cairo:
+
+cp /export/Apps/Cairo/cairo-VM/config/halef-logging-db.xml /export/Apps/JVXML/JvoiceXML/main/
+
+and edit mrcpv2 settings to point to Cairo server by replacing IP for cairoAddress and cairoHost in the file:
+
+/export/Apps/JVXML/JvoiceXML/org.jvoicexml.implementation.mrcpv2/build.gradle
+
+3. To compile and run JvoiceXML you need Gradle version 3 or higher. Because system apt-get will install only version 2 it is recommended to download Gradle directly from:
+
+https://services.gradle.org/distributions/gradle-3.4.1-bin.zip
+
+and symply unpack it into /export/Apps
+
+4. You can build and run JvoiceXML using the following commands (or put them into shell script):
+
+*cd /export/Apps/JVXML/JvoiceXML/main/*
+
+*export JAVA_HOME=/export/Apps/jdk*
+
+*export PATH=/export/Apps/jdk/bin/java:/export/Apps/gradle-3.4.1/bin:$PATH*
+
+*nohup gradle run*
+
+
+
 
 
 
