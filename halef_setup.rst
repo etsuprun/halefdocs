@@ -72,3 +72,16 @@ How to setup Kaldi Recognizer and Test Recognition Model
 
 *./server.sh &*
 
+
+How to setup Cairo speech server
+--------------------------------
+
+To setup Cairo instances a convenient setup script has been created.
+
+1. Download setup script and Kaldi settings file by opening the following links and clicking "Download this file" link on top of each page.
+
+https://sourceforge.net/p/halef/halef-cairo/ci/master/tree/cairo-SETUP/SETUP.sh
+
+https://sourceforge.net/p/halef/halef-cairo/ci/master/tree/cairo-SETUP/SETUP.kaldi.properties
+
+2. 
