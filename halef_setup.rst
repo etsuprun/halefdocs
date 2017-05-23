@@ -94,13 +94,27 @@ https://sourceforge.net/p/halef/halef-cairo/ci/master/tree/cairo-SETUP/SETUP.kal
 
 Cairo installation can take considerable time depending on your Internet connection speed.
 
-5. You can install and run Cairo as service by running CairoService script:
+5. You can install and run Cairo as service by running CairoService script (please review CairoService file content first to check if all directories are correct there):
 
 *cd /export/Apps/Cairo/cairo-VM/scripts*
 
 *sudo CairoService install*
 
 *sudo service cairo start*
+
+
+
+How to setup JvoiceXML Voice Browser Application
+------------------------------------------------
+
+1. For JvoiceXML we recommend using latest version directly from JvoiceXML developer repository (https://github.com/JVoiceXML/JVoiceXML) :
+
+*mkdirs -p /export/Apps/JVXML*
+
+*cd /export/Apps/JVXML*
+
+*git clone https://github.com/JVoiceXML/JVoiceXML.git*
+
 
 
 
