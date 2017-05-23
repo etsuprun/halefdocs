@@ -86,11 +86,24 @@ https://sourceforge.net/p/halef/halef-cairo/ci/master/tree/cairo-SETUP/SETUP.kal
 
 2. Copy downloaded SETUP.* files into /export/Apps directory on the server and edit them. You will see direcory settings and database connection settings in the top part of SETUP.sh file which you need to correct. SETUP.kaldi.properties should contain at least 1 entry defining item name, server ip and port on which Kaldi is listening. For example: *default=localhost:9404*
 
-3. Make sure that you have ~2GB of free space in /export/Apps and server can connect to Internet to download Cairo.
+3. Make sure that you have ~2GB of free space in /export/Apps and server can connect to the Internet for Cairo download.
 
 4. To install Cairo with Java, please run setup in unattended mode:
 
 *./SETUP.sh --quiet*
+
+Cairo installation can take considerable time depending on your Internet connection speed.
+
+5. You can install and run Cairo as service by running CairoService script:
+
+*cd /export/Apps/Cairo/cairo-VM/scripts*
+
+*sudo CairoService install*
+
+*sudo service cairo start*
+
+
+
 
 
 
