@@ -78,10 +78,19 @@ How to setup Cairo speech server
 
 To setup Cairo instances a convenient setup script has been created.
 
-1. Download setup script and Kaldi settings file by opening the following links and clicking "Download this file" link on top of each page.
+1. Download setup script and Kaldi settings files by opening the following links and clicking "Download this file" link on top of each page.
 
 https://sourceforge.net/p/halef/halef-cairo/ci/master/tree/cairo-SETUP/SETUP.sh
 
 https://sourceforge.net/p/halef/halef-cairo/ci/master/tree/cairo-SETUP/SETUP.kaldi.properties
 
-2. 
+2. Copy downloaded SETUP.* files into /export/Apps directory on the server and edit them. You will see direcory settings and database connection settings in the top part of SETUP.sh file which you need to correct. SETUP.kaldi.properties should contain at least 1 entry defining item name, server ip and port on which Kaldi is listening. For example: *default=localhost:9404*
+
+3. Make sure that you have ~2GB of free space in /export/Apps and server can connect to Internet to download Cairo.
+
+4. To install Cairo with Java, please run setup in unattended mode:
+
+*./SETUP.sh --quiet*
+
+
+
