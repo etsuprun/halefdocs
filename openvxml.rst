@@ -25,14 +25,11 @@ In this manual, you will learn how to:
 Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-We assume that you are familiar with:
+This tutorial assumes some familiarity with:
  
-- Using git or another version control system
+- Using git or another version control system (check out the `git tutorial`_) 
 - Using the shell / command prompt terminal to run scripts
-
-To learn about git and command line basics, check out the `git tutorial`_. 
-
-- Using regular expressions, which we use to search for patterns in the users' responses. For an introduction to regular expressions, we recommend the `RegexOne tutorial`_.
+- Using regular expressions, which we use to search for patterns in the users' responses (see  `RegexOne tutorial`_.)
 
 Installing Eclipse and OpenVXML
 --------------------------------
@@ -469,7 +466,7 @@ To add a new design canvas to a Workflow (and configure a portal between the new
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
-.. _git tutorial: https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository
+.. _git tutorial: https://try.github.io/levels/1/challenges/1
 .. _RegexOne tutorial: https://www.regexone.com
 .. _Python 3: https://www.python.org/downloads/
 .. _OpenVXML for Windows: https://sourceforge.net/p/halef/openvxml/ci/master/tree/OpenVXML-5.1.0/binary/OpenVXML_5.1.0.201506111143.zip
