@@ -5,7 +5,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-   
+
 OpenVXML Without Tears [1]_
 ============================
 
@@ -26,8 +26,8 @@ Prerequisites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This tutorial assumes some familiarity with:
- 
-- Using git or another version control system (check out the `git tutorial`_) 
+
+- Using git or another version control system (check out the `git tutorial`_)
 - Using the shell / command prompt terminal to run scripts
 - Using regular expressions, which we use to search for patterns in the users' responses (see  `RegexOne tutorial`_.)
 
@@ -49,7 +49,7 @@ Download and install Eclipse_. Do not use the latest version—only this one.
 Install the OpenVXML plug-in for Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download OpenVXML 5.1. Here is the compiled `OpenVXML for Windows`_. 
+Download OpenVXML 5.1. Here is the compiled `OpenVXML for Windows`_.
 
 Unzip the file.
 
@@ -84,7 +84,7 @@ Set up the voice and workflows
 Every OpenVXML project consists of two components:
 
 - The *Voice*, which stores all your audio files
-- The *Workflows*, a visual representation of the chatbot application you want to design. 
+- The *Workflows*, a visual representation of the chatbot application you want to design.
 
 First, let's create a new voice project: *File* → *New* → *Project* → *Voice Tool Wizards* → *Voice*
 
@@ -142,6 +142,9 @@ Your canvas should now look like this:
 
 .. image:: /images/hello_world_canvas.png
 
+
+*NOTE*: In many cases, you might need to transfer to another application once you complete the current dialog flow. In such cases, you will need to use a *Submit* block instead of a Return block. The Submit block should contain two parameters: the start URL of the WAR application that you are transferring to, and, ideally, the Session ID of the current application session. Please refer to the "Starter.war" example WAR file for more details on how to do this. 
+
 Save and export your project
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -156,7 +159,7 @@ We need to export the newly created project into a Web ARchive (WAR) application
 Test your application on halefBot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-halefBot is the text-based interface to Halef. 
+halefBot is the text-based interface to Halef.
 
 Open up halefBot URL (ask your system administrator for the URL).
 
@@ -179,7 +182,7 @@ Let's say you want to import an application someone else has already worked on a
 6. You may or may not get an error message. If you do, and you can't access Main canvas, restart Eclipse.
 
 
-Creating a Branching Application 
+Creating a Branching Application
 ----------------------------------------
 
 Let's now create a more complex callflow. In this section of the tutorial, you will build a text-based chatbot that will:
@@ -214,7 +217,7 @@ Drag a *Question* block onto your canvas and connect the Begin block to it. Doub
 2. Set the *Name* for the question block. This name is arbitrary and will just help you identify the block on your canvas.
 3. Set a *Variable Name* for the variable that will store the response for our question. Our convention is to start the variable name with `A_`, for instance, ``A_do_you_like_pizza``.
 4. Double-click on `Not Configured` next to *Prompt* (in the Media tab). Press "Add Entry". In the dialog box that appears, set Content Type to Text. Type "Do you like pizza?" in the text area. That's the text that will be shown to the test taker. Hit OK twice.
-5. Double-click on `Not Configured` next to *Voice Grammar*. Choose "Grammar File" (from the dropdown menu) and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one. 
+5. Double-click on `Not Configured` next to *Voice Grammar*. Choose "Grammar File" (from the dropdown menu) and then type `ignore.wfst`. This is the name of the language model Halef will be using when converting the user's speech input into text. Because we are building a text-based chatbot for now, we don't need to customize a language model. We do, however, need to specify a value here, because Halef expects one.
 
 Your question block should look like this:
 
@@ -244,7 +247,7 @@ The syntax of each line of the macro is as follows::  [regular expression matchi
 When we run `autoggs.py` on this application, the script will find the macros (everything between `/*` and `*/`) and convert them into code that will:
 
 * Log ``A_do_you_like_pizza`` (the variable containing the response to the question block) to the server
-* If the response contains the strings "yes" or "yeah", set the variable ``SC_do_you_like_pizza`` to equal to "yes". 
+* If the response contains the strings "yes" or "yeah", set the variable ``SC_do_you_like_pizza`` to equal to "yes".
 * If the response contains the string "no", set the variable ``SC_do_you_like_pizza`` to equal to "no".
 
 Create a Branch block
@@ -304,15 +307,15 @@ Install the `pandas` package for Python::
 	pip install pandas
 
 Clone the `pythia` repository::
-	
+
 	git clone [repository location goes here]
 
 Go into the `pythia` directory and run `autoggs.py` (NB: `autoggs.py` assumes that the OpenVXML workflow is named Deploy_Workflow)::
-	
+
 	python autoggs.py [the location of your Eclipse workspace directory]
 
 Here is what the output should look like::
-	
+
 	$ python autoggs.py /c/openvxml/pizza
 	Reading in the workspace...
 	Parsing script for the do_you_like_pizza question block ...
@@ -388,7 +391,7 @@ Let's open our project in Eclipse again and have a look. Pull up the script bloc
 	Log.info("completing key.toString()");
 	var query = new java.lang.String("sessionId="+Variables.sessionId+"&A_do_you_like_pizza="+Variables.A_do_you_like_pizza+"&SC_do_you_like_pizza'="+Variables.SC_do_you_like_pizza);
 
-			
+
 	connection.setDoOutput(true);
 	connection.setRequestProperty("Accept-Charset", "UTF-8");
 	connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
@@ -435,7 +438,7 @@ Add another Script block to your canvas. If you'd like, give it a name like "inc
 
 Now, after we run this code, we'll want to decide whether the counter is greater than 2. To help with this, let's use the `Decision` block from the Voice Pallet.
 
-The Decision block helps us formulate a single JavaScript expression that evaluates to ``true`` or ``false``. Select ``counter_do_you_like_pizza`` on the left, `Greater Than (>)` as the comparison operator, then Expression of ``2`` on the right. 
+The Decision block helps us formulate a single JavaScript expression that evaluates to ``true`` or ``false``. Select ``counter_do_you_like_pizza`` on the left, `Greater Than (>)` as the comparison operator, then Expression of ``2`` on the right.
 
 .. image:: /images/counter_decision.png
 
@@ -449,20 +452,20 @@ After the third time we hit the Default exit path, the counter was greater than 
 
 Portals: Extending Workflows to Span Multiple Canvases
 --------------------------------------------------------
-Using multiple canvases is a great way to separate an application into more manageable pieces. 
+Using multiple canvases is a great way to separate an application into more manageable pieces.
 
 To add a new design canvas to a Workflow (and configure a portal between the new and existing canvas):
 
-1. Right-click on the `Workflow Design` folder for ``Deploy_Workflow`` in the Project Explorer and select: 
+1. Right-click on the `Workflow Design` folder for ``Deploy_Workflow`` in the Project Explorer and select:
  `New` → `Other` → `Voice Tools Wizard` -> `Design Document`. Hit "Next". This will open the new design document wizard. Give the new canvas a name and hit "Finish".
 
-2. Enter a name for the new design canvas in the input box (for example, “SecondCanvas”. Note: This name must be unique amongst the existing design canvases in the application. 
+2. Enter a name for the new design canvas in the input box (for example, “SecondCanvas”. Note: This name must be unique amongst the existing design canvases in the application.
 
 3. When you open up the new canvas, you'll see a `Portal Exit` block on the new canvas.
 
 .. image:: /images/secondcanvas.png
 
-4. Let's set up a Portal Entry and connect it to the second canvas. Drag and drop `Portal Entry` from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to. 
+4. Let's set up a Portal Entry and connect it to the second canvas. Drag and drop `Portal Entry` from the Voice Pallet onto the original canvas. Click on the new block and choose the Portal Exit to connect it to.
 
 .. _JDK 8: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 .. _Eclipse: http://www.eclipse.org/downloads/packages/eclipse-rcp-and-rap-developers/keplersr2
