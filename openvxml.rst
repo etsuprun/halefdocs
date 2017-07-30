@@ -74,36 +74,6 @@ Now that you have installed OpenVXML, change your perspective (the windows and t
 Creating a Hello World Project
 --------------------------------
 
-Set up the voice and workflows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Every OpenVXML project consists of two components:
-
-- The *Voice*, which stores all your audio files
-- The *Workflows*, a visual representation of the chatbot application you want to design.
-
-First, let's create a new voice project: *File* → *New* → *Project* → *Voice Tool Wizards* → *Voice*
-
-Call the voice project *HelloWorld_Voice*.
-
-You should now see the voice project in your Project Explorer pane:
-
-.. image:: /images/create_voice.png
-
-Now, create the interactive workflow: *File* → *New* → *Project* → *Voice Tool Wizards* → Interactive Workflow
-
-The application name for this and all Halef workflows should be *Deploy_Workflow*. Hit *Next*.
-
-In the Branding dialog box, leave Brands at *Default*. Hit *Next*.
-
-On the *Interaction Type Support* dialog box, leave *Voice Interaction* checked. Hit *Next*.
-
-On the *Language Support* dialog box, associate your workflow with your voice by clicking `Not Configured` and choosing *HelloWorld_Voice*:
-
-.. image:: /images/associate_voice.png
-
-You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
-
 Create a text-based Hello World canvas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -411,7 +381,7 @@ Let's save, deploy, and try this in halefBot:
 
 After the third time we hit the Default exit path, the counter was greater than 2, and so we got kicked out from the application.
 
-Portals: Extending Workflows to Span Multiple Canvases
+Appendix A: Portals: Extending Workflows to Span Multiple Canvases
 --------------------------------------------------------
 Using multiple canvases is a great way to separate an application into more manageable pieces.
 
@@ -436,3 +406,36 @@ To add a new design canvas to a Workflow (and configure a portal between the new
 .. _OpenVXML for Windows: https://sourceforge.net/p/halef/openvxml/ci/master/tree/OpenVXML-5.1.0/binary/OpenVXML_5.1.0.201506111143.zip
 
 .. [1] The absence of tears is not guaranteed.
+
+
+Appendix B: Creating an OpenVXML project from scratch
+--------------------------------------------------------
+
+The easiest way to get started with an OpenVXML project is to follow the instructions above and import `Starter.war`, a starter project. But if you really want to create your project from scratch using the Eclipse plugin, here are the instructions.
+
+Every OpenVXML project consists of two components:
+
+- The *Voice*, which stores all your audio files
+- The *Workflows*, a visual representation of the chatbot application you want to design.
+
+First, let's create a new voice project: *File* → *New* → *Project* → *Voice Tool Wizards* → *Voice*
+
+Call the voice project *HelloWorld_Voice*.
+
+You should now see the voice project in your Project Explorer pane:
+
+.. image:: /images/create_voice.png
+
+Now, create the interactive workflow: *File* → *New* → *Project* → *Voice Tool Wizards* → Interactive Workflow
+
+The application name for this and all Halef workflows should be *Deploy_Workflow*. Hit *Next*.
+
+In the Branding dialog box, leave Brands at *Default*. Hit *Next*.
+
+On the *Interaction Type Support* dialog box, leave *Voice Interaction* checked. Hit *Next*.
+
+On the *Language Support* dialog box, associate your workflow with your voice by clicking `Not Configured` and choosing *HelloWorld_Voice*:
+
+.. image:: /images/associate_voice.png
+
+You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
