@@ -22,9 +22,10 @@ Design a chatbot that takes restaurant reservations.  The user will be instructe
 
 Callflow:
 
-- The robotic restaurant employee greets the customer.
-- The user says something like: Hi, can I make a reservation?" "I'd like to make a reservation" "Could I make a reservation for tonight?"
-- The bot might ask:
+-	The robotic restaurant employee greets the customer.
+-	The user says something like: Hi, can I make a reservation?" "I'd like to make a reservation" "Could I make a reservation for tonight?"
+-	The bot asks:
+
   - how many people the reservation is for (unless already specified)
   - what time (unless already specified)
 -	The bot confirms the reservation.
