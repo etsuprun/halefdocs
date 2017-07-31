@@ -121,30 +121,6 @@ Your canvas should now look like this:
 
 .. image:: /images/hello_world_canvas.png
 
-Save and export your project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We need to export the newly created project into a Web ARchive (WAR) application that can be served by the web server as VoiceXML and then read by Halef's Voice Browser. A voice browser browses voice/speech web pages (in the VoiceXML format) much like Firefox or Chrome browse HTML pages.
-
-1. Save the project: *File* → *Save All*
-2. Go to *File* → *Export ...*
-3. Under Voice Tools, choose "Web Application"
-4. Select "Archive file".
-5. Choose where you'd like to save the file. We recommend saving it in a git repository for better version control.
-
-Test your application on halefBot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-halefBot is the text-based interface to Halef.
-
-Open up halefBot URL (ask your system administrator for the URL).
-
-The Start URL is [your war file name without '.war']/Deploy_Workflow/Begin.
-
-For instance, if you called your war file "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
-
-Once you specify the Start URL, halefBot should say: Hello World!
-
 Creating a Branching Application
 ----------------------------------------
 
@@ -159,15 +135,6 @@ Let's now create a more complex callflow. In this section of the tutorial, you w
 Our callflow will look like this:
 
 .. image:: /images/pizza_callflow.png
-
-Set up your workspace and project
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We find it easiest to keep each OpenVXML project in its own Eclipse workspace. So if you already have a project open in Eclipse, you may want to switch to another Eclipse workspace. Go to *File* → *Switch Workspace* → *Other...* and choose where you'd like your new workspace to be.
-
-To restore your Project Explorer, Design Area, and Voice Pallet, go to *Window* → *Open Perspective* → *Other...*, and choose OpenVXML.
-
-Now, follow the instructions in `Creating a Hello World Project`_ to create your voice and workflow: Pizza_Voice and Deploy_Workflow.
 
 Configure the question block
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,7 +280,7 @@ Add the PlayPrompts
 
 Depending on the category of the response, we will respond with a relevant PlayPrompt—"Me too! I love pizza!", "I'm sorry to hear you don't like pizza.", or "Sorry, I don't understand.". Create three new PlayPrompts that say this.
 
-Add the connectors and Return block
+Add the connectors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Draw an arrow from your Branch to "Me too! I love pizza!" In the ensuing dialog box, choose the "yes" exit path.
@@ -322,14 +289,29 @@ Now, draw an arrow from the Branch to "I'm sorry to hear you don't like pizza." 
 
 Draw an arrow from the Branch to "I don't understand" and choose the Default exit path. If the system doesn't understand the response, let's ask the user to repeat it. To do so, connect the "I don't understand" PlayPrompt back to the "Do you like pizza?" question to create a loop.
 
-Finally, drag a Return block from the Voice Pallet. Connect the remaining two play prompts to a Return block to indicate the end of the application.
+Finally, connect the remaining two play prompts to a Submit block to mark the end of the application.
 
-Save and deploy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Save and export your project
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Great.
+We need to export the newly created project into a Web ARchive (WAR) application that can be served by the web server as VoiceXML and then read by Halef's Voice Browser. A voice browser browses voice/speech web pages (in the VoiceXML format) much like Firefox or Chrome browse HTML pages.
 
-Follow the instructions under `Save and export your project`_ to save, export, deploy, and test your application.
+1. Save the project: *File* → *Save All*
+2. Go to *File* → *Export ...*
+3. Under Voice Tools, choose "Web Application"
+4. Select "Archive file".
+5. Choose where you'd like to save the file. We recommend saving it in a git repository for better version control.
+
+Test your application on halefBot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+halefBot is the text-based interface to Halef.
+
+Open up halefBot URL (ask your system administrator for the URL).
+
+The Start URL is [your war file name without '.war']/Deploy_Workflow/Begin.
+
+For instance, if you called your war file "helloworld.war", the Start URL is ``helloworld/Deploy_Workflow/Begin``.
 
 Open your project in halefBot and try a few different responses:
 
