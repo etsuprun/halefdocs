@@ -24,7 +24,7 @@ Callflow:
 
 - The robotic restaurant employee greets the customer.
 - The user says something like: Hi, can I make a reservation?" "I'd like to make a reservation" "Could I make a reservation for tonight?"
-- The bot asks:
+- The bot might ask:
   - how many people the reservation is for (unless already specified)
   - what time (unless already specified)
 -	The bot confirms the reservation.
