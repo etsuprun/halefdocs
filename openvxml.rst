@@ -160,12 +160,13 @@ Script blocks allow you to use the JavaScript language to manipulate variables, 
 
 In this application, we will use the script block to classify the response to the question "Do you like pizza?" into one of two categories: yes or no. We will also send the user's response to a back-end service, which will then store it into a database.
 
-Fortunately, you don't need to know JavaScript to achieve the above goals. We've created a tool called WebGGS to help you.
+Fortunately, you don't need to know JavaScript to achieve the above goals. We've created a tool called WebGGS that will write the script for you.
+
 Drag a Script block and connect the Question block to it.
 
 Now, open WebGGS: https://videotelephony.halef-research.ets.org/webggs/
 
-Define the variable name: ``A_do_you_like_pizza``
+In WebGGs, define the variable name: ``A_do_you_like_pizza``
 
 Add some regular expressions representing potential responses to the question "Do you like pizza?" and corresponding semantic categories. Your WebGGS box should look like this:
 
