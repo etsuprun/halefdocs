@@ -25,8 +25,8 @@ Callflow:
 - The robotic restaurant employee greets the customer.
 - The user says something like: Hi, can I make a reservation?" "I'd like to make a reservation" "Could I make a reservation for tonight?"
 - The bot asks:
--- how many people the reservation is for (unless already specified)
---	what time (unless already specified)
+  - how many people the reservation is for (unless already specified)
+  - what time (unless already specified)
 -	The bot confirms the reservation.
 
 Appology acceptor 
@@ -43,5 +43,5 @@ Callflow:
 -	The robo-friend picks up the phone: "Hello?"
 -	If the user apologizes immediately: "Oh, that's OK, don't worry about it. Let's reschedule our lunch for next week."
 -	If the user just says hello, respond with something like "Oh, hi. So what happened?"
--- If the user apologizes then, accept the apology.
--- If there is no apology, say something like: "Hmm OK. I see."
+  - If the user apologizes then, accept the apology.
+  - If there is no apology, say something like: "Hmm OK. I see."
