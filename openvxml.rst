@@ -92,6 +92,11 @@ The Starter war file helps you get started designing your chatbot quickly.
 Create a text-based Hello World canvas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Every OpenVXML project consists of two components:
+
+- The *Voice*, which stores all your audio files (for speech applications)
+- The *Workflows*, a visual representation of the chatbot application you want to design. 
+
 In Project Explorer, expand *Deploy_Workflow* and then *Workflow Design*. Open up *Main Canvas.canvas*. As the name suggests, this is the canvas on which you will be drawing a flowchart-like representation of your chatbot. You should now see something like this:
 
 .. image:: /images/canvas.png
@@ -101,6 +106,8 @@ The *Project Explorer* (on the left) is where you should see the Voice and Workf
 The *Design Area* (in the middle) shows the call flow of the currently selected canvas.
 
 The *Voice Pallet* (on the right) displays the available blocks for the application.
+
+The Starter warfile only has a Begin block (denoting the start of the callflow) and the Submit block (marking where the call ends).
 
 Drag the block called *PlayPrompt* onto the canvas. *PlayPrompt* outputs something to your user–either a sound file or some text. Let's have it say "Hello world!":
 
@@ -392,11 +399,6 @@ Appendix B: Creating an OpenVXML project from scratch
 --------------------------------------------------------
 
 The easiest way to get started with an OpenVXML project is to follow the instructions above and import `Starter.war`, a starter project. But if you really want to create your project from scratch using the Eclipse plugin, here are the instructions.
-
-Every OpenVXML project consists of two components:
-
-- The *Voice*, which stores all your audio files
-- The *Workflows*, a visual representation of the chatbot application you want to design.
 
 First, let's create a new voice project: *File* → *New* → *Project* → *Voice Tool Wizards* → *Voice*
 
