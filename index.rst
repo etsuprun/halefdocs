@@ -7,3 +7,4 @@ Welcome to the Halef Documentation Site
   openvxml
   ideas
   halef_setup
+  halefbot: http://webserver01-halef.ddns.net/halefBot/
