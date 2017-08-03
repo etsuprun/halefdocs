@@ -82,14 +82,14 @@ Import the starter project
 The Starter war file helps you get started designing your chatbot quickly.
 
 1. Download the Starter war file: https://github.com/etsuprun/halefdocs/raw/master/Starter.war
-2. Open Eclipse. Choose a new workspace.
+2. Open Eclipse. Choose a new workspace.(Note: it is best practice to create a new workspace for each application you are working on.)
 3. Open the OpenVXML perspective: `Window` → `Open Perspective` → `Other...` and choose "OpenVXML".
 4. `File` → `Import...` Choose "General" -> "Existing Projects into Workspace" and click on "Next". Then, select the button next to "Select archive file:", hit `Browse...` and navigate to the location of the .war file you just downloaded. In the drop-down menu with file extensions (which is located in the lower right corner of the dialog box on Windows), choose `*.*`. Then choose the .war file that you would like to import and select "Open".
 5. Hit "Finish" in the window that appears.
 6. You may or may not get an error message. If you do, just restart Eclipse.
 
 
-Create a text-based Hello World canvas
+Set up a text-based Hello World canvas
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Every OpenVXML project consists of two components:
