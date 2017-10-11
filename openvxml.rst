@@ -45,7 +45,7 @@ Download and install Eclipse_. Do not use the latest version—only this one.
 Install the OpenVXML plug-in for Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download OpenVXML 5.1. Here is the compiled `OpenVXML for Windows`_.
+Download OpenVXML 5.1. Here is the compiled `OpenVXML for Windows`_. (Despite its name, it also works on Mac's.)
 
 Unzip the file.
 
