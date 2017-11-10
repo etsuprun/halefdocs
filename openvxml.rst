@@ -421,3 +421,21 @@ On the *Language Support* dialog box, associate your workflow with your voice by
 .. image:: /images/associate_voice.png
 
 You have now created your voice and your workflow, and you have associated the two. You should see both *HelloWorld_Voice* and *Deploy_Workflow* in the Project Explorer pane.
+
+
+Appendix C: Troubleshooting
+--------------------------------------------------------
+
+Symptom: A Question dialog state does not respond to speech input
+Try this:
+   1. Look in the Tomcat log to see if there was any error
+   2. If the log indicates instead that the last action was fetching the grammar file:
+      a. Ensure that the grammar file in the war has Linux line endings: Export it, remove it from the war, check the line endings in a text editor, and re-import to the war.
+      b. Ensure that the grammar element in the vxml shown in the Tomcat log has mode="voice" and there is no grammar element with mode="dtmf".
+         * If the vxml has a problem:
+	    1. Import the war into OpenVxml and open the Question node
+	    2. Change Settings > User Input Style = Hybrid
+	    3. If Media > Dtmf Grammar shows anything other than "Not Configured", then double-click the displayed value and set Grammar File to an empty string.
+	    4. If Media > Voice Grammar shows "Not Configured", then double-click "Not Configured", set the dropdown to Grammar File, and type the filename of the grammar file (including the file extension) into the textbox.
+	    5. Change Settings > User Input Style = "Voice Only" with the S shown in blue and the D shown in gray.
+	    6. Save and then Export.
