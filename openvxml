@@ -45,7 +45,7 @@ Download and install Eclipse_. Do not use the latest version—only this one.
 Install the OpenVXML plug-in for Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download OpenVXML 5.1. Here is the compiled `OpenVXML for Windows`_. (Despite its name, it also works on Mac's.)
+Download OpenVXML 5.1. Here is the compiled `OpenVXML`_.
 
 Unzip the file.
 
@@ -55,7 +55,8 @@ From the menu, select *Help* → *Install New Software...*.
 
 In the Install dialog that appears, in the "Work with:" field at the top, hit `Add...`.
 
-Hit `Local...` and select the unzipped directory: ``OpenVXML_5.1.0201506111143``.
+Hit `Local...` and select the unzipped directory: ``OpenVXML_5.1.0201506111143
+``.
 
 Make sure all the check boxes in the bottom part of the screen are unchecked (`Show only the latest versions of available software`, `Group items by category`, etc.)
 
@@ -390,7 +391,7 @@ To add a new design canvas to a Workflow (and configure a portal between the new
 .. _git tutorial: https://try.github.io/levels/1/challenges/1
 .. _RegexOne tutorial: https://www.regexone.com
 .. _Python 3: https://www.python.org/downloads/
-.. _OpenVXML for Windows: https://sourceforge.net/p/halef/openvxml/ci/master/tree/OpenVXML-5.1.0/binary/OpenVXML_5.1.0.201506111143.zip
+.. _OpenVXML: https://sourceforge.net/p/halef/openvxml/ci/master/tree/OpenVXML-5.1.0/binary/OpenVXML_5.1.0.201506111143.zip
 
 .. [1] The absence of tears is not guaranteed.
 
