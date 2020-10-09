@@ -41,6 +41,7 @@ Install Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Download and install Eclipse_. Do not use the latest version—only this one.
+(Note for Mac users: Extract the eclipse tar into /Applications and run from there to avoid crashes)
 
 Install the OpenVXML plug-in for Eclipse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,7 +181,7 @@ Add some regular expressions representing potential responses to the question "D
 
 .. image:: /images/webggs.png
 
-Now, hit the right arrow to generate the script. You should the following output:
+Now, hit the right arrow to generate the script. You should see the following output:
 
 .. highlight:: javascript
 
@@ -308,8 +309,8 @@ We need to export the newly created project into a Web ARchive (WAR) application
 1. Save the project: *File* → *Save All*
 2. Go to *File* → *Export ...*
 3. Under Voice Tools, choose "Web Application"
-4. Select "Archive file".
-5. Choose where you'd like to save the file. We recommend saving it in a git repository for better version control.
+4. Select “Archive file”.
+5. Type a name for the destination file along with .war extension. Choose where you'd like to save the file. We recommend saving it in a git repository for better version control.
 
 Test your application on halefBot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
